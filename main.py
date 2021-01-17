@@ -1,6 +1,10 @@
-from flask import Flask
-app = Flask(__name__)
+from flask import render_template
+
+# Internal modules
+from app import create_app
+
+app = create_app()
 
 @app.route('/')
-def hello_world():
-    return 'Hello, World!'
+def homepage():
+    return render_template('home.html')
