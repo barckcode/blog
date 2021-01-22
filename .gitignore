@@ -93,3 +93,6 @@ dmypy.json
 
 ### Node JS ###
 node_modules
+
+### Assets ###
+images

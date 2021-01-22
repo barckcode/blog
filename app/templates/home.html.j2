@@ -2,13 +2,20 @@
 {% block title %}Home{% endblock %}
 {% block head %}
     {{ super() }}
-    {# <link rel="stylesheet" href="static/prueba.css" /> #}
+    <link rel="stylesheet" href="static/css/templates/home.css" />
 {% endblock %}
 {% block main %}
-    <h1>
-        Barckcode
-    </h1>
-    <p>
-        {{texto}}
-    </p>
+<div class="portada">
+    <figure class="portada_container_img">
+        <img src="static/images/portada.jpg" class="portada_img" alt="Teclado con fondo morado">
+    </figure>
+    <div class="portada_presentation">
+        <h5 class="portada_presentation_title">
+            {{ title }}
+        </h5>
+        <p class="portada_presentation_text">
+            {{ presentation }}
+        </p>
+    </div>
+</div>
 {% endblock %}

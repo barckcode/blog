@@ -1,0 +1,20 @@
+.portada_container_img {
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+.portada_img {
+    max-width: 100%;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.portada_presentation {
+    padding: 1rem;
+    text-align: justify;
+}
+
+.portada_presentation_title {
+    text-align: center;
+}
