@@ -2,23 +2,24 @@ from flask import render_template
 import markdown
 import markdown.extensions.fenced_code
 
-
 # Internal modules
+from app import home_template_vars
 from app import create_app
 
-
+# Init APP
 app = create_app()
 
+# Data
+home_data = home_template_vars()
 
+
+########## Router and Views ##########
 @app.route('/')
 def home_page():
-    title = "Bienvenid@! 🖖🏾"
-    presentation = "Quizá ya lo sepas. Pero aquí se habla de sistemas Linux, Docker, Kubernetes, IaC, Python y todo lo que tenga que ver con Infraestructura. Acompañame en este loco camino entre Devs y Ops 🤪"
-
     return render_template(
         'home.html.j2',
-        title = title,
-        presentation = presentation,
+        title = home_data[0],
+        presentation = home_data[1],
     )
 
 
