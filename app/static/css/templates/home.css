@@ -1,13 +1,20 @@
 .portada_container_img {
     width: 100%;
-    max-width: 768px;
-    margin: 0 auto;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    background-color: #2c012e;
+    background-image: url("../../images/portada.jpg");
+    background-size: cover;
 }
 
-.portada_img {
-    max-width: 100%;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+.portada_img_perfil {
+    max-width: 100px;
+    width: 100%;
+    border-radius: 50%;
 }
 
 .portada_presentation {
