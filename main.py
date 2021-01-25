@@ -39,6 +39,24 @@ def blog_page():
     )
 
 
+@app.route('/blog/<path:post>')
+def blog_post(post):
+    texto = "Estas en la página de Blog"
+
+    path_of_post = "app/static/posts/" + post + ".md"
+
+    readme_file = open(path_of_post, "r")
+    md_template_string = markdown.markdown(
+        readme_file.read(), extensions=["fenced_code"]
+    )
+
+    return render_template(
+        'blog.html.j2',
+        texto = texto,
+        md_template_string = md_template_string,
+    )
+
+
 @app.route('/about')
 def about_page():
     texto = "Estas en la página de About"
