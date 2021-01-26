@@ -1,13 +1,10 @@
 {% extends "layouts/base.html.j2" %}
-{% block title %}About{% endblock %}
+{% block title %}Blog{% endblock %}
 {% block head %}
     {{ super() }}
 {% endblock %}
 {% block main %}
-    <h1>
-        Barckcode
-    </h1>
-    <p>
-        {{texto}}
-    </p>
+    <div class="post">
+        {{ md_template_string }}
+    <div>
 {% endblock %}

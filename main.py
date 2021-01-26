@@ -27,15 +27,9 @@ def home_page():
 def blog_page():
     texto = "Estas en la página de Blog"
 
-    readme_file = open("app/static/posts/bash/bash_cheat_sheet.md", "r")
-    md_template_string = markdown.markdown(
-        readme_file.read(), extensions=["fenced_code"]
-    )
-
     return render_template(
         'blog.html.j2',
         texto = texto,
-        md_template_string = md_template_string,
     )
 
 
@@ -51,8 +45,7 @@ def blog_post(post):
     )
 
     return render_template(
-        'blog.html.j2',
-        texto = texto,
+        'layouts/post.html.j2',
         md_template_string = md_template_string,
     )
 

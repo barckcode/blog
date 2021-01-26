@@ -1,5 +1,5 @@
 {% extends "layouts/base.html.j2" %}
-{% block title %}Home{% endblock %}
+{% block title %}Blog{% endblock %}
 {% block head %}
     {{ super() }}
 {% endblock %}
@@ -10,7 +10,7 @@
     <p>
         {{texto}}
     </p>
-    <div>
-        {{ md_template_string }}
-    </div>
+    <a href="/blog/linux/basic_netcat">
+        Post
+    </a>
 {% endblock %}
