@@ -1,6 +1,6 @@
 from flask import render_template
 import markdown
-import markdown.extensions.fenced_code
+import markdown.extensions.fenced_code, markdown.extensions.meta
 
 # Internal modules
 from app import home_template_vars
@@ -39,13 +39,16 @@ def blog_post(post):
 
     path_of_post = "app/static/posts/" + post + ".md"
 
-    readme_file = open(path_of_post, "r")
+    readme_file = open(path_of_post, "r").read()
     md_template_string = markdown.markdown(
-        readme_file.read(), extensions=["fenced_code"]
+        readme_file, extensions=["fenced_code", "meta"]
     )
+
+    md = markdown.Markdown(extensions = ['meta'])
 
     return render_template(
         'layouts/post.html.j2',
+        data = md.Meta,
         md_template_string = md_template_string,
     )
 
