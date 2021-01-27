@@ -44,6 +44,7 @@ def blog_post(post):
         readme_file, extensions=["fenced_code", "meta"]
     )
 
+    # Test:
     md = markdown.Markdown(extensions = ['meta'])
 
     return render_template(
