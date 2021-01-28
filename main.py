@@ -1,10 +1,7 @@
 from flask import render_template
-import markdown
-import markdown.extensions.fenced_code, markdown.extensions.meta
 
 # Internal modules
-from app import home_template_vars
-from app import create_app
+from app import create_app, home_template_vars, post_markdown_data, post_markdown_metadata
 
 # Init APP
 app = create_app()
@@ -35,22 +32,15 @@ def blog_page():
 
 @app.route('/blog/<path:post>')
 def blog_post(post):
-    texto = "Estas en la página de Blog"
-
     path_of_post = "app/static/posts/" + post + ".md"
 
-    readme_file = open(path_of_post, "r").read()
-    md_template_string = markdown.markdown(
-        readme_file, extensions=["fenced_code", "meta"]
-    )
-
-    # Test:
-    md = markdown.Markdown(extensions = ['meta'])
+    post_data = post_markdown_data(path_of_post)
+    post_metadata = post_markdown_metadata(path_of_post)
 
     return render_template(
         'layouts/post.html.j2',
-        data = md.Meta,
-        md_template_string = md_template_string,
+        post_metadata = post_metadata,
+        post_data = post_data,
     )
 
 
@@ -61,3 +51,8 @@ def about_page():
         'about.html.j2',
         texto=texto,
     )
+
+    # TEST
+    # print('*' * 20)
+    # print(md.Meta)
+    # print('*' * 20)
