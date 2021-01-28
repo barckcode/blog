@@ -1,3 +1,10 @@
+---
+Title: Vim Cheat Sheet
+Authors: Barckcode
+Date: 11/12/2020
+Categories: Linux
+---
+
 # Vim Cheat Sheet
 
 En este doc vas a encontrar un listado de atajos, comandos, ejemplos e info relevante para sentirte lo más cómodo posible al usar Vim.

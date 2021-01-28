@@ -1,10 +1,11 @@
 ---
 Title: Uso básico de Netcat
 Authors: Barckcode
-Date: 27/01/2021
+Date: 21/11/2020
 Categories: Linux
 ---
 
+# Uso básico de Netcat
 Netcat es una herramienta de análisis de red que permite abrir puertos, transferir archivos, chatear, obtener una shell de un host remoto y muchas cosas mas.
 
 **Después de esta rápida intro. Empecemos con el código!**
@@ -16,7 +17,7 @@ Netcat es una herramienta de análisis de red que permite abrir puertos, transfe
 
 - Ejemplo: Vamos a conectarnos al puerto 21 (FTP) de un host con IP: 192.168.0.100
 
- ```bash
+```bash
 nc -nv 192.168.0.100 21
 ```
 

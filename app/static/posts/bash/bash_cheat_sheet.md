@@ -1,3 +1,10 @@
+---
+Title: Bash Cheat Sheet
+Authors: Barckcode
+Date: 13/09/2020
+Categories: Bash
+---
+
 # Bash Cheat Sheet
 
 En este doc vas a encontrar un listado de comandos y ejemplos de pequeños fragmentos de scripts de Bash.

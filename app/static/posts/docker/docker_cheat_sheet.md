@@ -1,4 +1,11 @@
-#Docker Cheat Sheet
+---
+Title: Docker Cheat Sheet
+Authors: Barckcode
+Date: 27/10/2020
+Categories: Docker
+---
+
+# Docker Cheat Sheet
 
 En este doc vas a encontrar un listado de comandos y ejemplos prácticos de Docker.
 
