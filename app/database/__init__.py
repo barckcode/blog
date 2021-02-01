@@ -1,0 +1,1 @@
+from .get_data_table import get_data_of_table

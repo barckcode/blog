@@ -1,14 +1,14 @@
 from flask import render_template
 
 # Internal modules
-from app import create_app, home_template_vars, post_markdown_data, post_markdown_metadata
+from app import create_app, home_template_vars, post_markdown_data, post_markdown_metadata, get_data_of_table
 
 # Init APP
 app = create_app()
 
 # Data
 home_data = home_template_vars()
-
+records_data = get_data_of_table("linux_posts")
 
 ########## Router and Views ##########
 @app.route('/')
@@ -17,6 +17,7 @@ def home_page():
         'home.html.j2',
         title = home_data[0],
         presentation = home_data[1],
+        records_data = records_data
     )
 
 

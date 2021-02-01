@@ -16,6 +16,14 @@
         <p class="portada_presentation_text">
             {{ presentation }}
         </p>
+        <div>
+            <h3>Salida de BBDD:</h3>
+            {% for row in records_data %}
+                <li>{{"ID = ", row[0]}}</li>
+                <li>{{"POST_NAME = ", row[1]}}</li>
+                <li>{{"CATEGORY = ", row[2]}}</li>
+            {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock %}
