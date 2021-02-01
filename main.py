@@ -1,14 +1,14 @@
 from flask import render_template
 
 # Internal modules
-from app import create_app, home_template_vars, post_markdown_data, post_markdown_metadata, get_data_of_table
+from app import create_app, home_template_vars, post_markdown_data, post_markdown_metadata, last_posts
 
 # Init APP
 app = create_app()
 
 # Data
 home_data = home_template_vars()
-records_data = get_data_of_table("linux_posts")
+records_data = last_posts()
 
 ########## Router and Views ##########
 @app.route('/')
