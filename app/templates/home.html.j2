@@ -16,18 +16,41 @@
         <p class="portada_presentation_text">
             {{ presentation }}
         </p>
-        <div>
-            <h3>Salida de BBDD:</h3>
-            {% for row in records_data %}
-                <li>{{row[0]}}</li>
-                <li>{{row[1]}}</li>
-                <li>{{row[2]}}</li>
-                <li>{{row[3]}}</li>
-            {% endfor %}
-            {# <div>
-                {{ records_data[-1] }}
-            </div> #}
-        </div>
     </div>
+    <hr class="separator">
+    <div class="posts">
+        <h3 class="posts_title">
+            Últimos posts:
+        </h3>
+        {% for row in records_data %}
+        <div class="card text-center">
+            <div class="card-header">
+                {{ row[1] }}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ row[4] }}</h5>
+                <p class="card-text">{{ row[5] }}</p>
+                <a href="/blog/{{ row[1] }}/{{ row[2] }}" class="btn btn-primary">Ir al post</a>
+            </div>
+            <div class="card-footer text-muted">
+                {{ row[3] }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {# ########## TEST ############ #}
+    {# <div>
+        <hr>
+        <h3>Salida de BBDD:</h3>
+        {% for row in records_data %}
+            <li>{{row[0]}}</li>
+            <li>{{row[1]}}</li>
+            <li>{{row[2]}}</li>
+            <li>{{row[3]}}</li>
+            <li>{{row[4]}}</li>
+            <li>{{row[5]}}</li>
+        {% endfor %}
+    </div> #}
 </div>
 {% endblock %}

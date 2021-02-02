@@ -25,3 +25,36 @@
 .portada_presentation_title {
     text-align: center;
 }
+
+.separator {
+    color: #2c012e;
+}
+
+.posts {
+    text-align: center;
+    padding: 1rem;
+}
+
+.posts_title {
+    padding-top: 1rem;
+}
+
+.card {
+    margin-top: 1rem;
+}
+
+.card-header {
+    color: white;
+    background-color: #2c012e;
+}
+
+.card-body .card-text {
+    text-align: justify;
+}
+
+/* Media Queries */
+@media (min-width: 1024px) {
+    .card-body .card-text {
+        text-align: center;
+    }
+}
