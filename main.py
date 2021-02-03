@@ -47,10 +47,8 @@ def blog_post(post):
 
 @app.route('/about')
 def about_page():
-    texto = "Estas en la página de About"
     return render_template(
         'about.html.j2',
-        texto=texto,
     )
 
     # TEST

@@ -2,12 +2,115 @@
 {% block title %}About{% endblock %}
 {% block head %}
     {{ super() }}
+    <link rel="stylesheet" href="static/css/templates/about.css" />
 {% endblock %}
 {% block main %}
-    <h1>
-        Barckcode
-    </h1>
+<div class="container">
+    <div class="header_profile">
+        <figure class="header_profile_img">
+            <img src="static/images/about/perfil.jpg" alt="Profile Image" class="profile_img">
+        </figure>
+        <div class="header_profile_text">
+            <h1>
+                Sobre mí
+            </h1>
+            <p>
+                Bienvenida / Bienvenido 👋🏾
+            </p>
+        </div>
+    </div>
     <p>
-        {{texto}}
+        Mi nombre es <strong>Cristian</strong> y si estas aquí. Seguramente sea porque te interesa la tecnología igual que a mí. Sin embargo, en esta página intentaré presentarme para que sepas un poco quién soy.
     </p>
+    <p>
+        Esto nunca se me ha dado bien pero allá vamos...
+    </p>
+    <p>
+        Actualmente resido en España, aunque mi intención es poder vivir y disfrutar de muchos más países. Ya que <strong>me encanta viajar.</strong>
+    </p>
+    <p>
+        Quizá esto sea un tópico sin embargo en mi caso me gusta compaginar el poder viajar con conocer algo de historia. Y casi siempre que viajo intento averiguar personajes, fechas y sitios historicos para poder visitarlos.
+    </p>
+    <p>
+        Os dejo uno de mis recuerdos favoritos en el <a href="https://es.wikipedia.org/wiki/Volc%C3%A1n_Cotopaxi" target="_blank" rel="noopener noreferrer">Volcán Cotopaxi</a>.
+    </p>
+    <figure class="container_travel_img">
+        <img src="static/images/about/cotopaxi.jpg" alt="Volcán Cotopaxi - Ecuador" class="travel_img">
+    </figure>
+    <p>
+        Más allá de viajar también <strong>me gustan mucho los videojuegos.</strong> En especial <a href="https://www.smitegame.com/" target="_blank" rel="noopener noreferrer">Smite.</a> El cuál llevo jugando ya varios años. Incluso llegué a competir en torneos nacionales. Al punto que quedamos segundos de España en uno de los torneos.
+    </p>
+    <p>
+        Aunque eso es agua pasada. La falta de tiempo o quizá la necesidad de concentrarme en otras cosas me ha quitado la habilidad que antes tenía. Y ahora realmente juego más por diversión que por competición.
+    </p>
+        Más allá de esto. Lo que más me gusta es todo lo relacionado con tecnología. Desde programar hasta cacharrear con aparatos electrónicos. No haré un monólogo de todo lo que hago o me gusta pero si nombraré lo más destacable a día de hoy.
+    <p>
+    <ul>
+        <li><strong>Me encanta Linux y MacOS.</strong> Son los sistemas operativos que más utilizo actualmente.</li>
+        <li>Cacharreo mucho últimamente con mi Rasberry Pi 4 y Arduino.</li>
+        <li>El Mundo Web es la rama que más he tocado. Desde la administración de servidores, la creación y automatización de la infraestructura. Hasta la definición de la arquitectura un producto<strong>-Soy SysAdmin🤘🏾-</strong></li>
+        <li>También he desarrollado páginas web básicas. Tanto del lado del Fronted como del lado del Backend.</li>
+        <li>Aunque algo que me ha llamado mucho la atención es poder crear bots. De momento solo he podido hacer bots con las APIs de Telegram e Instagram. Pero creo que es algo súper potente.</li>
+        <li>El lenguaje de programación que más me gusta y más domino es Python. Aunque me defiendo un poco también con JavaScript. ¿Y en un futuro? Uno de mis objetivos es aprender GO en profundidad.</li>
+    </ul>
+    </p>
+        No sé qué mas contaros de mí asi que para que esto no sea un tostón muy largo. Os voy a dejar una lista de algunas de mis otras cosas favoritas.
+    <div class="container_summary">
+        <h5>
+            Series:
+        </h5>
+        <ul>
+            <li>Game of Thrones. (Sí, lo sé. El final es una cacota)</li>
+            <li>Peaky Blinders. (Va de gangsters ingleses. Esta bastante bien)</li>
+            <li>Vikings. (Es magnífica. Hasta la temporada 4. El resto no vale la pena)</li>
+            <li>The Get Down. (Ambientada en el Bronx de los 70. Esta muy chula)</li>
+            <li>Mr. Robot. (Esta es brutal. Recomendadísima)</li>
+            <li>Silicon Valley. (Estereotipos a saco. Pero esta muy bien)</li>
+            <li>How I Met Your Mother. (Un clásico)</li>
+            <li>The Mandalorian. (No soy fan de Star Wars pero me está gustando. PD: no me matéis)</li>
+        </ul>
+        <h5>
+            Películas:
+        </h5>
+        <ul>
+            <li>El señor de los anillos. (La mejor trilogía de la historia. Sin opción a debate)</li>
+            <li>Django Unchained. (En mi opinión. La mejor de Quentin Tarantino)</li>
+            <li>Inception. (Una ida de olla brutal. Pero recomendadísima)</li>
+            <li>Iron Man I. (La mejor de Marvel)</li>
+            <li>Joker. (La del 2019. La mejor de DC)</li>
+            <li>El pianista. (Obligatoria)</li>
+            <li>La vida es bella. (Una obra de arte. También obligatoria)</li>
+        </ul>
+        <h5>
+            Artistas:
+        </h5>
+        <ul>
+            <li>Ismael Rivera (El sonero mayor. Mi cantante favorito)</li>
+            <li>The Weeknd (Uno de mis sueños. Es poder asistir algún día a un concierto suyo)</li>
+            <li>Solomun (El Dj que más he escuchado)</li>
+            <li>J. Balvin (De Reggaeton. El que mas me gusta)</li>
+        </ul>
+    </div>
+    <p class="footer_profile_text">
+        Antes que se me olvide. Os dejo los links a mis redes sociales. <strong>Seguirme!</strong> 😜
+    </p>
+    <div class="container_social">
+        <a href="https://twitter.com/barckcode" target="_blank" rel="noopener noreferrer">
+            <figure class="container_social_img">
+                <img src="static/images/about/twitter.svg" alt="Twitter image" class="social_img">
+            </figure>
+        </a>
+        <a href="https://github.com/BarckCode" target="_blank" rel="noopener noreferrer">
+            <figure class="container_social_img">
+                <img src="static/images/about/github.svg" alt="GitHub image" class="social_img">
+            </figure>
+        </a>
+        <a href="https://www.linkedin.com/in/barckcode" target="_blank" rel="noopener noreferrer">
+            <figure class="container_social_img">
+                <img src="static/images/about/linkedin.svg" alt="LinkedIn image" class="social_img">
+            </figure>
+        </a>
+    </div>
+</div>
+
 {% endblock %}

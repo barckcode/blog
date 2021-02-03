@@ -1,0 +1,51 @@
+.container {
+    padding: 2rem;
+    text-align: justify;
+}
+
+.header_profile_img {
+    width: 100%;
+    display: flex;
+}
+
+.profile_img {
+    max-width: 200px;
+    width: 100%;
+    border-radius: 2%;
+    margin: 0 auto;
+}
+
+.header_profile_text {
+    text-align: center;
+}
+
+.container_travel_img {
+    width: 100%;
+    display: flex;
+}
+
+.travel_img {
+    width: 100%;
+    border-radius: 0.75%;
+    margin: 1rem auto;
+}
+
+.container_summary {
+    margin-top: 1rem;
+}
+
+.footer_profile_text {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.container_social {
+    display: flex;
+    justify-content: center;
+}
+
+.social_img {
+    max-width: 50px;
+    width: 100%;
+    margin-right: 1rem;
+}
