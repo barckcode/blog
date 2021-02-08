@@ -1,4 +1,5 @@
 {% extends "layouts/base.html.j2" %}
+{% from 'components/last_posts.html.j2' import last_posts %}
 {% block title %}Home{% endblock %}
 {% block head %}
     {{ super() }}
@@ -22,7 +23,7 @@
         <h3 class="posts_title">
             Últimos posts:
         </h3>
-        {% for row in records_data %}
+        {# {% for row in records_data %}
         <div class="card text-center">
             <div class="card-header">
                 {{ row[1] }}
@@ -36,7 +37,8 @@
                 {{ row[3] }}
             </div>
         </div>
-        {% endfor %}
+        {% endfor %} #}
+        {{ last_posts(records_data) }}
     </div>
 
     {# ########## TEST ############ #}

@@ -1,0 +1,17 @@
+{% macro last_posts(records_data) -%}
+    {% for row in records_data %}
+    <div class="card text-center">
+        <div class="card-header">
+            {{ row[1] }}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ row[4] }}</h5>
+            <p class="card-text">{{ row[5] }}</p>
+            <a href="/blog/{{ row[1] }}/{{ row[2] }}" class="btn btn-primary">Ir al post</a>
+        </div>
+        <div class="card-footer text-muted">
+            {{ row[3] }}
+        </div>
+    </div>
+    {% endfor %}
+{%- endmacro %}

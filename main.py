@@ -23,11 +23,8 @@ def home_page():
 
 @app.route('/blog')
 def blog_page():
-    texto = "Estas en la página de Blog"
-
     return render_template(
         'blog.html.j2',
-        texto = texto,
     )
 
 
