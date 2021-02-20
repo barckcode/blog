@@ -1,4 +1,4 @@
-# Local env
+### Local env ###
 .history
 *.env*
 
@@ -97,3 +97,12 @@ node_modules
 
 ### Assets ###
 images
+
+
+### Terraform ###
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
