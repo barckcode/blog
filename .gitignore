@@ -1,6 +1,7 @@
 ### Local env ###
 .history
 *.env*
+*.pem
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
