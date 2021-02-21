@@ -1,6 +1,7 @@
 resource "aws_vpc" "main" {
   cidr_block       = "10.0.0.0/16"
   instance_tenancy = "default"
+  enable_dns_hostnames = true
 
   tags = {
     Name = "main",
@@ -15,6 +16,15 @@ resource "aws_subnet" "main_subnet_01" {
 
   tags = {
     Name = "main_subnet_01",
+    Creation = "terraform",
+  }
+}
+
+resource "aws_internet_gateway" "main_internet_gw" {
+  vpc_id = aws_vpc.main.id
+
+  tags = {
+    Name = "main_internet_gw",
     Creation = "terraform",
   }
 }
