@@ -2,6 +2,7 @@
 .history
 *.env*
 *.pem
+*.key*
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -107,3 +108,25 @@ images
 # .tfstate files
 *.tfstate
 *.tfstate.*
+
+### Jenkins ###
+**/jenkins_home/.cache
+**/jenkins_home/jenkins.*
+**/jenkins_home/logs
+**/jenkins_home/war
+**/jenkins_home/*.xml
+**/jenkins_home/*.log
+**/jenkins_home/.lastStarted
+**/jenkins_home/.java
+**/jenkins_home/.groovy
+**/jenkins_home/plugins
+**/jenkins_home/users
+**/jenkins_home/userContent
+**/jenkins_home/workflow*
+**/jenkins_home/updates
+**/jenkins_home/secrets
+**/jenkins_home/.ssh
+**/jenkins_home/.bash_history
+
+# Ansible
+**/jenkins_home/ansible/private
