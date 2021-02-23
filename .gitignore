@@ -114,7 +114,7 @@ images
 **/jenkins_home/jenkins.*
 **/jenkins_home/logs
 **/jenkins_home/war
-**/jenkins_home/*.xml
+**/jenkins_home/*.xml*
 **/jenkins_home/*.log
 **/jenkins_home/.lastStarted
 **/jenkins_home/.java
@@ -125,6 +125,8 @@ images
 **/jenkins_home/workflow*
 **/jenkins_home/updates
 **/jenkins_home/secrets
+**/jenkins_home/jobs
+**/jenkins_home/nodes
 **/jenkins_home/.ssh
 **/jenkins_home/.bash_history
 

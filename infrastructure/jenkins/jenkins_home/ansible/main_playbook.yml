@@ -1,4 +1,4 @@
 - hosts: aragon
   tasks:
 
-
+  - shell: echo Hola Mundo desde un Job de Jenkins, lanzando un playbook de Ansible > /tmp/test_ansible
