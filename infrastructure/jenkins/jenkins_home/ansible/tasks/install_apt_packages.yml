@@ -1,0 +1,9 @@
+---
+- name: Install software
+  apt:
+    update_cache: yes
+    state: latest
+    pkg:
+    - nginx
+    - supervisor
+    - python3-pip
