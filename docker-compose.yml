@@ -11,3 +11,22 @@ services:
       - ./test.env
     ports:
       - 5000:5000
+    networks:
+      - net_app
+  db_host:
+    container_name: db_app
+    image: mysql/mysql-server:5.7
+    env_file:
+      - ./test.env
+    environment:
+      - "MYSQL_ROOT_PASSWORD=${DB_PASSWORD}"
+    volumes:
+      - app_data:/var/lib/mysql
+    networks:
+      - net_app
+
+volumes:
+  app_data:
+
+networks:
+  net_app:

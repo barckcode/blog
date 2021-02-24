@@ -130,6 +130,7 @@ images
 **/jenkins_home/.ssh
 **/jenkins_home/.bash_history
 **/jenkins_home/workspace
+**/jenkins_home/.owner
 
 # Ansible
 **/ansible/private
