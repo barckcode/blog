@@ -1,10 +1,15 @@
 ---
-############################# TAGS FOR TASKS:
-# install_apt_packages - Instalar paquetes con apt
-#############################
+############################# TAGS FOR TASKS #############################
+# install_apt_packages  - Install packages whit apt
+# install_pip_packages  - Install packages whit pip
+##########################################################################
 - hosts: aragon
 
   tasks:
     - include: tasks/install_apt_packages.yml
       tags:
         - install_apt_packages
+
+    - include: tasks/install_pip_packages.yml
+      tags:
+        - install_pip_packages

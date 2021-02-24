@@ -13,7 +13,6 @@ resource "aws_instance" "aragon" {
   ami           = local.aragon_ami
   instance_type = local.aragon_instance_type
   subnet_id   = aws_subnet.main_subnet_01.id
-  associate_public_ip_address  = false
   private_ip = "10.0.1.100"
   key_name = "ssh_key"
 
@@ -56,6 +55,23 @@ resource "aws_security_group" "aragon_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  ingress {
+    description = "HTTP"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "HTTPS"
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
 
   tags = {
     Name = "allow_aragon_sg",
