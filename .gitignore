@@ -129,6 +129,10 @@ images
 **/jenkins_home/nodes
 **/jenkins_home/.ssh
 **/jenkins_home/.bash_history
+**/jenkins_home/workspace
 
 # Ansible
+**/ansible/private
+**/ansible/.ansible
 **/jenkins_home/ansible/private
+**/jenkins_home/.ansible
