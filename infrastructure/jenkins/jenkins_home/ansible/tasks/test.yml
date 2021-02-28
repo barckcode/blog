@@ -1,0 +1,6 @@
+---
+- name: Sync whit a Remote Directory
+  synchronize:
+    mode: push
+    src: /var/jenkins_home/ansible/db/post_test_dump.sql.bz2
+    dest: rsync://aragon/tmp/post_test_dump.sql.bz2

@@ -1,5 +1,0 @@
----
-- name: Install software whit pip
-  pip:
-    requirements: /var/www/barckcode.dev/requirements.txt
-    executable: /usr/bin/pip3

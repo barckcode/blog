@@ -5,6 +5,5 @@
     state: latest
     pkg:
     - nginx
-    - supervisor
     - python3-pip
     - git-all
