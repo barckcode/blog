@@ -4,6 +4,7 @@
     update_cache: yes
     state: latest
     pkg:
+    - fail2ban
     - nginx
     - python3-pip
     - git-all
