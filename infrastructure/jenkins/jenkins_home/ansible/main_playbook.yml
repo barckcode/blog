@@ -2,6 +2,7 @@
 ############################# TAGS FOR TASKS #############################
 # test                  - Test
 # install_apt_packages  - Install packages whit apt
+# install_docker        - Install docker and docker-compose for debian
 ##########################################################################
 - hosts: aragon
 
@@ -13,3 +14,7 @@
     - include: tasks/install_apt_packages.yml
       tags:
         - install_apt_packages
+
+    - include: tasks/install_docker.yml
+      tags:
+        - install_docker
