@@ -8,3 +8,4 @@
     - nginx
     - python3-pip
     - git-all
+    - mysql-server
