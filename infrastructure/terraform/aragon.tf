@@ -21,8 +21,8 @@ resource "aws_instance" "aragon" {
   }
 
   tags = {
-    Name = "aragon",
-		Creation = "terraform",
+    Name     = "aragon"
+		Creation = "terraform"
   }
 }
 
@@ -36,8 +36,8 @@ resource "aws_eip" "aragon_public_ip" {
   depends_on                = [aws_internet_gateway.main_internet_gw]
 
   tags = {
-    Name = "aragon_public_ip",
-		Creation = "terraform",
+    Name     = "aragon_public_ip"
+		Creation = "terraform"
   }
 }
 
@@ -74,8 +74,8 @@ resource "aws_security_group" "aragon_sg" {
 
 
   tags = {
-    Name = "allow_aragon_sg",
-    Creation = "terraform",
+    Name     = "allow_aragon_sg"
+    Creation = "terraform"
   }
 }
 
