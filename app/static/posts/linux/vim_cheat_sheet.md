@@ -81,22 +81,26 @@ Para ello:
 
 - Desde el Modo Comando entramos en el Modo Visual Block.
 
-![](https://firebasestorage.googleapis.com/v0/b/blog-barckcode.appspot.com/o/CollectedNotes%2Fvim_cheat_sheet%2Fvisual_block.png?alt=media&token=63364dd6-f904-470f-adee-cf19a3cec273)
+![](https://s3-eu-west-1.amazonaws.com/static.helmcode.com/images/posts/linux/vim_cheat_sheet/visual_block.png)
 
-- Con las teclas cursores (←,↑,→,↓) seleccionamos las líneas que necesitemos.
+- Con las teclas cursores (←,↑,→,↓) seleccionamos las líneas que necesitemos. En mi caso quiero comentar las dos líneas con los "export".
 
-![](https://firebasestorage.googleapis.com/v0/b/blog-barckcode.appspot.com/o/CollectedNotes%2Fvim_cheat_sheet%2Fdata_seleccionada.png?alt=media&token=d2a4f921-eab9-4a65-b1c3-cbdeb67b40aa)
+![](https://s3-eu-west-1.amazonaws.com/static.helmcode.com/images/posts/linux/vim_cheat_sheet/visual_block_select.png)
 
-- Para insertar lo que necesitemos en las líneas seleccionadas. Pulsamos `Shift + i`
+- Para insertar lo que necesitemos en las líneas seleccionadas. Pulsamos `Shift + i`, de esta forma como ves pasamos al Modo Insert.
 
-![](https://firebasestorage.googleapis.com/v0/b/blog-barckcode.appspot.com/o/CollectedNotes%2Fvim_cheat_sheet%2Finsert_mode.png?alt=media&token=24ba90df-9ccf-458f-a236-a01e73440d5a)
+![](https://s3-eu-west-1.amazonaws.com/static.helmcode.com/images/posts/linux/vim_cheat_sheet/insert.png)
 
 - Posteriormente escribimos lo que necesitemos. En mi caso un **#**
 
-![](https://firebasestorage.googleapis.com/v0/b/blog-barckcode.appspot.com/o/CollectedNotes%2Fvim_cheat_sheet%2Fwrite_one.png?alt=media&token=6783a303-6440-454d-b271-2243a62036f1)
+![](https://s3-eu-west-1.amazonaws.com/static.helmcode.com/images/posts/linux/vim_cheat_sheet/insert_hastag.png)
 
-- Finalmente pulsamos la tecla `ESC`.
+- Después pulsamos la tecla `ESC`. Como ves automáticamente escribe en todas las líneas lo que hayamos escrito mientras estabamos en Modo Insert.
 
-![](https://firebasestorage.googleapis.com/v0/b/blog-barckcode.appspot.com/o/CollectedNotes%2Fvim_cheat_sheet%2Fwrite_all.png?alt=media&token=7b846f51-c332-4354-b488-dc63c43d2ca4)
+![](https://s3-eu-west-1.amazonaws.com/static.helmcode.com/images/posts/linux/vim_cheat_sheet/insert_hastag_all.png)
+
+- Finalmente para salir guardando los cambios escribimos `:wq` y pulsan la tecla `Enter`. (Si por algún motivo quisieran salir sin guardar los cambios tendrían que teclear `:q!` y posteriormente pulsar la tecla `Enter`)
+
+![](https://s3-eu-west-1.amazonaws.com/static.helmcode.com/images/posts/linux/vim_cheat_sheet/vi_save.png)
 
 Y listo! Todas las líneas comentadas a la vez.

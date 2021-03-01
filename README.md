@@ -13,3 +13,7 @@
 - docker-compose -f docker-compose.yml restart flask
 
 > Be careful whit static files in css
+
+# To investigate
+- https://flask.palletsprojects.com/en/1.1.x/tutorial/deploy/
+- https://docs.docker.com/engine/swarm/
