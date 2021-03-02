@@ -31,12 +31,13 @@
     </header>
     <div id="main" class="main">
         {% block main %}{% endblock %}
+
+        <footer id="footer" class="nav justify-content-center">
+            {% block footer %}
+            By&nbsp;<a href="https://twitter.com/barckcode">Barckcode</a>
+            {% endblock %}
+        </footer>
     </div>
-    <footer id="footer" class="nav justify-content-center">
-        {% block footer %}
-        By&nbsp;<a href="https://twitter.com/barckcode">Barckcode</a>
-        {% endblock %}
-    </footer>
 
     {# Scripts #}
     <script src="/static/js/nav_buttons.js"></script>

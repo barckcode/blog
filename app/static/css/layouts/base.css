@@ -2,6 +2,9 @@
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
+    background: #ffffff;
+    box-shadow:  5px 5px 15px #d4d4d4,
+             -5px -5px 15px #ffffff;
 }
 
 .navbar {
