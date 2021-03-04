@@ -1,0 +1,28 @@
+.post {
+    padding: 2rem 1rem;
+    text-align: justify;
+}
+
+.post h1 {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 1rem;
+}
+
+.post h3 {
+    margin: 1rem 0rem;
+}
+
+.post img {
+    width: 100%;
+}
+
+.post hr {
+    margin-top: 2rem;
+}
+
+.post pre {
+    padding: 1rem;
+    color: cyan;
+    background-color: #151920;
+}

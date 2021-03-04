@@ -1,6 +1,6 @@
 ---
 Title: Bash Cheat Sheet
-Authors: Barckcode
+Authors: helmcode
 Date: 13/09/2020
 Categories: Bash
 ---
