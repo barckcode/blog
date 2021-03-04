@@ -1,22 +1,19 @@
 ---
 Title: Docker Cheat Sheet
-Authors: Barckcode
+Authors: helmcode
 Date: 27/10/2020
 Categories: Docker
 ---
 
 # Docker Cheat Sheet
 
-En este doc vas a encontrar un listado de comandos y ejemplos prácticos de Docker.
-
-Si nunca antes has usado Docker te recomiendo visitar antes esta [pequeña infografía](https://gist.github.com/BarckCode/35e2360fa49555382dabe1bfe356a064).
-
-Y si tienes cualquier duda o quieres darme feedback no dudes en dejarme un [Tweet.](https://twitter.com/barckcode)
+En este doc vas a encontrar un listado de comandos y ejemplos prácticos de Docker. Si tienes cualquier duda o quieres darme feedback no dudes en dejarme un [Tweet.](https://twitter.com/helmcode)
 
 **Ahora sí. Empecemos con el código!**
 
 ![programmer_gif](https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif)
-___
+
+---
 ###  🎖 Comandos
 
 #### - Levantando contenedores
@@ -30,6 +27,7 @@ Ejemplo:
 ```bash
 docker run hello-world
 ```
+---
 
 🔹 Arrancar un contenedor asignándole un nombre.
 
@@ -42,6 +40,7 @@ Ejemplo:
 ```bash
 docker run --name contenedor_test ubuntu
 ```
+---
 
 🔹 Arrancar un contenedor con una terminal interactiva. Pasándole una shell para acceder al contenedor.
 
@@ -54,6 +53,7 @@ Ejemplo:
 ```bash
 docker run -it ubuntu bash
 ```
+---
 
 🔹 Arrancar un contenedor. Mapeando un puerto del host a un puerto del contenedor.
 
@@ -74,6 +74,7 @@ Igual que el ejemplo anterior pero dejándolo en segundo plano.
 ```bash
 docker run -p 8080:80 -d nginx
 ```
+---
 
 🔹 Arrancar un contenedor. Que tras terminar su periodo de vida. Será eliminado automáticamente.
 
@@ -86,6 +87,7 @@ Ejemplo:
 ```bash
 docker run -p 8080:80 -d --rm nginx
 ```
+---
 
 
 🔹 Arrancar un contenedor con un volume.
@@ -103,6 +105,7 @@ Ejemplo:
 ```bash
 docker run -v test:/apps:rw nginx
 ```
+---
 
 🔹 Arrancar un contenedor con un bind mount.
 
@@ -119,6 +122,7 @@ Ejemplo:
 ```bash
 docker run -v /home/application:/apps:ro ubuntu
 ```
+---
 
 🔹 Arrancar un contenedor con tmpfs.
 

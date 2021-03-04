@@ -1,6 +1,6 @@
 ---
 Title: Vim Cheat Sheet
-Authors: Barckcode
+Authors: helmcode
 Date: 11/12/2020
 Categories: Linux
 ---
@@ -61,16 +61,17 @@ En este doc vas a encontrar un listado de atajos, comandos, ejemplos e info rele
 
 Pongamos como ejemplo este fichero:
 
-```
-global
-    daemon
-    maxconn 256
+```bash
+#!/bin/bash
+# Autor: Barckcode
+# Description: Script to start flask in development mode
 
-defaults
-    mode http
-    timeout connect 5000ms
-    timeout client 50000ms
-    timeout server 50000ms
+# Env
+export FLASK_APP=main.py
+export FLASK_ENV=development
+
+# Run
+flask run
 ```
 
 En el cual necesitamos añadir un **#** en todas las líneas.
