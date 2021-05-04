@@ -9,3 +9,5 @@
     - python3-pip
     - git-all
     - mysql-server
+    - certbot
+    - python3-certbot-nginx
