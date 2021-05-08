@@ -18,20 +18,14 @@ DATE="$(date):"
 echo "*********************************************" >> $LOG_PATH
 echo $DATE >> $LOG_PATH
 cd $SOURCE_CODE
+
 $USR_BINARY/git checkout . >> $LOG_PATH
 $USR_BINARY/git pull >> $LOG_PATH
+$USR_BINARY/docker restart flask_app >> $LOG_PATH
 
 if [[ $? -eq 0 ]]
 then
-    echo "$DATE Pull ejecutado con éxito" >> $LOG_PATH
-    $USR_BINARY/docker restart flask_app >> $LOG_PATH
-
-    if [[ $? -eq 0 ]]
-    then
-        echo "$DATE Restart de flask_app ejecutado con éxito" >> $LOG_PATH
-    else
-        echo "$DATE ERROR - Restart de flask_app ejecutado sin éxito" >> $LOG_PATH
-    fi
+    echo "$DATE Restart de flask_app ejecutado con éxito" >> $LOG_PATH
 else
-    echo "$DATE ERROR - Pull ejecutado sin éxito" >> $LOG_PATH
+    echo "$DATE ERROR - Restart de flask_app ejecutado sin éxito" >> $LOG_PATH
 fi
