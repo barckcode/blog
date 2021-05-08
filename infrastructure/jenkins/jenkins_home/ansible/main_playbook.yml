@@ -3,6 +3,7 @@
 # test                  - Test
 # install_apt_packages  - Install packages whit apt
 # install_docker        - Install docker and docker-compose for debian
+# deploy                - Deploy in production
 ##########################################################################
 - hosts: aragon
 
@@ -18,3 +19,7 @@
     - include: tasks/install_docker.yml
       tags:
         - install_docker
+
+    - include: tasks/deploy.yml
+      tags:
+        - deploy
