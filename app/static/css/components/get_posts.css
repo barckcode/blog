@@ -1,0 +1,19 @@
+.card {
+    margin-top: 2rem;
+}
+
+.card-header {
+    color: white;
+    background-color: #2c012e;
+}
+
+.card-body .card-text {
+    text-align: justify;
+}
+
+/* Media Queries */
+@media (min-width: 1024px) {
+    .card-body .card-text {
+        text-align: center;
+    }
+}

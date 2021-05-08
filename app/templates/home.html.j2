@@ -1,9 +1,10 @@
 {% extends "layouts/base.html.j2" %}
-{% from 'components/last_posts.html.j2' import last_posts %}
+{% from 'components/get_posts.html.j2' import get_posts %}
 {% block title %}Home{% endblock %}
 {% block head %}
     {{ super() }}
     <link rel="stylesheet" href="/static/css/templates/home.css" />
+    <link rel="stylesheet" href="/static/css/components/get_posts.css" />
 {% endblock %}
 {% block main %}
 <div class="portada">
@@ -38,7 +39,7 @@
             </div>
         </div>
         {% endfor %} #}
-        {{ last_posts(records_data) }}
+        {{ get_posts(records_data) }}
     </div>
 
     {# ########## TEST ############ #}
