@@ -11,7 +11,7 @@ USR_BINARY="/usr/bin"
 SOURCE_CODE="/var/www/helmcode.com"
 
 # Commands
-DATE=`date":"`
+DATE="$(date):"
 
 
 cd $SOURCE_CODE
