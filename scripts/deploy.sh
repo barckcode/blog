@@ -22,13 +22,13 @@ if [[ $? -eq 0 ]]
 then
     echo "************************" >> /tmp/deploy.log
     echo "$DATE Pull ejecutado con éxito" >> /tmp/deploy.log
-    $BINARY/systemctl restart nginx
+    $USR_BINARY/docker restart flask_app
 
     if [[ $? -eq 0 ]]
     then
-        echo "$DATE Restart de nginx ejecutado con éxito" >> /tmp/deploy.log
+        echo "$DATE Restart de flask_app ejecutado con éxito" >> /tmp/deploy.log
     else
-        echo "$DATE ERROR - Restart de nginx ejecutado sin éxito" >> /tmp/deploy.log
+        echo "$DATE ERROR - Restart de flask_app ejecutado sin éxito" >> /tmp/deploy.log
     fi
 else
     echo "$DATE ERROR - Pull ejecutado sin éxito" >> /tmp/deploy.log
