@@ -26,7 +26,7 @@ def home_page():
 def blog_page():
     return render_template(
         'blog.html.j2',
-        records_data = all_records_data
+        records_data = reversed(all_records_data)
     )
 
 

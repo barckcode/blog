@@ -4,6 +4,6 @@ from app.database import get_data_of_table
 def all_posts():
 
     data_of_table = get_data_of_table('all_posts')
-    list_data_of_table = reversed(data_of_table)
+    data_of_table[-1:-50000]
 
-    return list_data_of_table
+    return data_of_table
