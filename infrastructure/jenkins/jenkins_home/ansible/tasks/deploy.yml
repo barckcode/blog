@@ -7,4 +7,4 @@
     mode: '0744'
 
 - name: Run a deploy script
-  command: sh /var/www/helmcode.com/scripts/deploy.sh
+  command: /var/www/helmcode.com/scripts/deploy.sh
