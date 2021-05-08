@@ -31,5 +31,6 @@ then
         echo "$DATE ERROR - Restart de flask_app ejecutado sin éxito" >> /tmp/deploy.log
     fi
 else
+    echo "************************" >> /tmp/deploy.log
     echo "$DATE ERROR - Pull ejecutado sin éxito" >> /tmp/deploy.log
 fi
