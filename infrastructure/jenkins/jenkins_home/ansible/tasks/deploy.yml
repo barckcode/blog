@@ -1,0 +1,4 @@
+---
+- name: Run a deploy script
+  script:
+    cmd: /var/www/helmcode.com/scripts/deploy.sh
