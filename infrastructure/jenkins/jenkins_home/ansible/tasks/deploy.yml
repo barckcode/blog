@@ -1,4 +1,10 @@
 ---
+- name: Change script deploy permissions
+  ansible.builtin.file:
+    path: /var/www/helmcode.com/scripts/deploy.sh
+    owner: root
+    group: root
+    mode: '0744'
+
 - name: Run a deploy script
-  script:
-    cmd: /var/www/helmcode.com/scripts/deploy.sh
+  command: sh /var/www/helmcode.com/scripts/deploy.sh
