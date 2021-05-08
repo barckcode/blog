@@ -1,7 +1,7 @@
 from flask import render_template
 
 # Internal modules
-from app import create_app, home_template_vars, post_markdown_data, post_markdown_metadata, last_posts
+from app import create_app, home_template_vars, post_markdown_data, post_markdown_metadata, last_posts, all_posts
 
 # Init APP
 app = create_app()
@@ -9,6 +9,7 @@ app = create_app()
 # Data
 home_data = home_template_vars()
 records_data = last_posts()
+all_records_data = all_posts()
 
 ########## Router and Views ##########
 @app.route('/')
@@ -25,6 +26,7 @@ def home_page():
 def blog_page():
     return render_template(
         'blog.html.j2',
+        records_data = all_records_data
     )
 
 
@@ -48,7 +50,7 @@ def about_page():
         'about.html.j2',
     )
 
-    # TEST
-    # print('*' * 20)
-    # print(md.Meta)
-    # print('*' * 20)
+#TEST
+# print('*' * 20)
+# print(all_records_data)
+# print('*' * 20)

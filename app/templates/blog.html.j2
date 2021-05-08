@@ -1,10 +1,11 @@
 {% extends "layouts/base.html.j2" %}
+{% from 'components/last_posts.html.j2' import last_posts %}
 {% block title %}Blog{% endblock %}
 {% block head %}
     {{ super() }}
 {% endblock %}
 {% block main %}
-    <h1>
+    {# <h1>
         Barckcode
     </h1>
     <p>
@@ -12,5 +13,11 @@
     </p>
     <a href="/blog/linux/basic_netcat">
         Post
-    </a>
+    </a> #}
+    <div class="posts">
+        {# <h3 class="posts_title">
+            Últimos posts:
+        </h3> #}
+        {{ last_posts(records_data) }}
+    </div>
 {% endblock %}
