@@ -12,7 +12,7 @@ services:
     ports:
       - 5555:5000
     networks:
-      - net_app
+      - net_app_pre
   db_host_pre:
     container_name: db_app_pre
     image: mysql/mysql-server:5.7
@@ -21,12 +21,12 @@ services:
     environment:
       - "MYSQL_ROOT_PASSWORD=${DB_PASSWORD}"
     volumes:
-      - app_data:/var/lib/mysql
+      - app_data_pre:/var/lib/mysql
     networks:
-      - net_app
+      - net_app_pre
 
 volumes:
-  app_data:
+  app_data_pre:
 
 networks:
-  net_app:
+  net_app_pre:
