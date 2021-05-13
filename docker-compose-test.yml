@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  flask:
+  flask_pre:
     container_name: flask_app_pre
     build: .
     command: flask run --host=0.0.0.0
