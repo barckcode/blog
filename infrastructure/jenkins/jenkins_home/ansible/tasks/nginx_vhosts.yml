@@ -1,0 +1,21 @@
+---
+- name: Copying vhosts files with owner and permissions
+  copy:
+    src: "{{ item }}"
+    dest: "{{ dest_vhosts_available_path }}/"
+    owner: root
+    group: root
+    mode: 0644
+  with_fileglob:
+    - "{{ src_vhosts_path }}/*"
+
+- name: Create a symbolic link of vhosts
+  file:
+    src: "{{ dest_vhosts_available_path }}/{{ item.src_dest }}"
+    dest: "{{ dest_vhosts_enabled_path }}/{{ item.src_dest }}"
+    owner: root
+    group: root
+    state: link
+  loop:
+    - { src_dest: helmcode_com.conf }
+    - { src_dest: pre_helmcode_com.conf }
