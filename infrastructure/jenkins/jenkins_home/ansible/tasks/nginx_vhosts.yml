@@ -19,3 +19,9 @@
   loop:
     - { src_dest: helmcode_com.conf }
     - { src_dest: pre_helmcode_com.conf }
+
+- name: Restart ngnix
+  systemd:
+    name: nginx
+    state: restarted
+    daemon_reload: yes
