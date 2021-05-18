@@ -26,7 +26,7 @@ echo "*********************************************" >> $LOG_PATH
 echo $DATE >> $LOG_PATH
 
 # Enviroment validation
-if [[ $1 = "PRO" ]]
+if [[ $ENV = "PRO" ]]
 then
     cd $SOURCE_CODE
     $USR_BINARY/git checkout main >> $LOG_PATH_PRE
@@ -50,7 +50,7 @@ then
         echo "$DATE ERROR - Pull ejecutado sin éxito" >> $LOG_PATH
         exit 1
     fi
-elif [[ $1 = "PRE" ]]
+elif [[ $ENV = "PRE" ]]
     cd $SOURCE_CODE_PRE
     $USR_BINARY/git checkout pre >> $LOG_PATH_PRE
     $USR_BINARY/git checkout . >> $LOG_PATH_PRE
