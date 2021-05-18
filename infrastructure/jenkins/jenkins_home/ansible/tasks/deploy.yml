@@ -13,6 +13,10 @@
     group: root
     mode: '0744'
 
+- name: Debug de la variable administrada desde Jenkins
+  debug:
+    var: ENV
+
 - name: Run a deploy script
-  script: /var/www/helmcode.com/scripts/deploy.sh --some-argument "{{ environment }}"
-  when: environment is defined
+  shell: /var/www/helmcode.com/scripts/deploy.sh "{{ ENV }}"
+  when: ENV is defined

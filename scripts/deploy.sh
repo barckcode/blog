@@ -20,6 +20,10 @@ LOG_SCRIPT="/tmp/deploy.log"
 # Commands
 DATE="$(date):"
 
+# Containers
+PRO_APP="flask_app"
+PRE_APP="flask_app_pre"
+
 ######################### SCRIPT
 # Parameter validation
 if [[ -n $ENV  ]]
@@ -39,14 +43,14 @@ then
         if [[ $? -eq 0 ]]
         then
             echo "$DATE Pull ejecutado con éxito" >> $LOG_SCRIPT
-            $USR_BINARY/docker restart flask_app >> $LOG_SCRIPT
+            $USR_BINARY/docker restart $PRO_APP >> $LOG_SCRIPT
 
             if [[ $? -eq 0 ]]
             then
-                echo "$DATE Restart de flask_app ejecutado con éxito" >> $LOG_SCRIPT
+                echo "$DATE Restart de $PRO_APP ejecutado con éxito" >> $LOG_SCRIPT
                 exit 0
             else
-                echo "$DATE ERROR - Restart de flask_app ejecutado sin éxito" >> $LOG_SCRIPT
+                echo "$DATE ERROR - Restart de $PRO_APP ejecutado sin éxito" >> $LOG_SCRIPT
                 exit 1
             fi
         else
@@ -63,14 +67,14 @@ then
         if [[ $? -eq 0 ]]
         then
             echo "$DATE Pull ejecutado con éxito" >> $LOG_SCRIPT
-            $USR_BINARY/docker restart flask_app_pre >> $LOG_SCRIPT
+            $USR_BINARY/docker restart $PRE_APP >> $LOG_SCRIPT
 
             if [[ $? -eq 0 ]]
             then
-                echo "$DATE Restart de flask_app ejecutado con éxito" >> $LOG_SCRIPT
+                echo "$DATE Restart de $PRE_APP ejecutado con éxito" >> $LOG_SCRIPT
                 exit 0
             else
-                echo "$DATE ERROR - Restart de flask_app ejecutado sin éxito" >> $LOG_SCRIPT
+                echo "$DATE ERROR - Restart de $PRE_APP ejecutado sin éxito" >> $LOG_SCRIPT
                 exit 1
             fi
         else
