@@ -59,7 +59,7 @@ elif [[ $1 = "PRE" ]]
     if [[ $? -eq 0 ]]
     then
         echo "$DATE Pull ejecutado con éxito" >> $LOG_PATH_PRE
-        $USR_BINARY/docker restart flask_app >> $LOG_PATH_PRE
+        $USR_BINARY/docker restart flask_app_pre >> $LOG_PATH_PRE
 
         if [[ $? -eq 0 ]]
         then
