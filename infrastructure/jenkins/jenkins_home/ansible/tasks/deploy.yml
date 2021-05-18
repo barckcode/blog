@@ -7,4 +7,5 @@
     mode: '0744'
 
 - name: Run a deploy script
-  command: /var/www/helmcode.com/scripts/deploy.sh
+  command: /var/www/helmcode.com/scripts/deploy.sh "{{ environment }}"
+  when: environment is defined
