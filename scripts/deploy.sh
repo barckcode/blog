@@ -15,73 +15,75 @@ SOURCE_CODE="/var/www/helmcode.com"
 SOURCE_CODE_PRE="/var/www/pre_helmcode.com"
 
 # Logs
-LOG_PATH="/tmp/deploy.log"
-LOG_PATH_PRE="/tmp/deploy_pre.log"
-LOG_ERROR_ENV="/tmp/deploy_error_env.log"
+LOG_SCRIPT="/tmp/deploy.log"
 
 # Commands
 DATE="$(date):"
 
 ######################### SCRIPT
-# Enviroment validation
-if [[ $ENV = "PRO" ]]
+# Parameter validation
+if [[ -n $ENV  ]]
 then
-    echo "*********************************************" >> $LOG_PATH
-    echo $DATE >> $LOG_PATH
-    echo "Entorno elegido: $ENV" >> $LOG_PATH
-    cd $SOURCE_CODE
-    $USR_BINARY/git checkout main >> $LOG_PATH_PRE
-    $USR_BINARY/git checkout . >> $LOG_PATH
-    $USR_BINARY/git pull >> $LOG_PATH
+    echo "*********************************************" >> $LOG_SCRIPT
+    echo $DATE >> $LOG_SCRIPT
+    echo "Entorno elegido: $ENV" >> $LOG_SCRIPT
 
-    if [[ $? -eq 0 ]]
+    # Enviroment validation
+    if [[ $ENV == "PRO" ]]
     then
-        echo "$DATE Pull ejecutado con éxito" >> $LOG_PATH
-        $USR_BINARY/docker restart flask_app >> $LOG_PATH
+        cd $SOURCE_CODE
+        $USR_BINARY/git checkout main >> $LOG_SCRIPT
+        $USR_BINARY/git checkout . >> $LOG_SCRIPT
+        $USR_BINARY/git pull >> $LOG_SCRIPT
 
         if [[ $? -eq 0 ]]
         then
-            echo "$DATE Restart de flask_app ejecutado con éxito" >> $LOG_PATH
-            exit 0
+            echo "$DATE Pull ejecutado con éxito" >> $LOG_SCRIPT
+            $USR_BINARY/docker restart flask_app >> $LOG_SCRIPT
+
+            if [[ $? -eq 0 ]]
+            then
+                echo "$DATE Restart de flask_app ejecutado con éxito" >> $LOG_SCRIPT
+                exit 0
+            else
+                echo "$DATE ERROR - Restart de flask_app ejecutado sin éxito" >> $LOG_SCRIPT
+                exit 1
+            fi
         else
-            echo "$DATE ERROR - Restart de flask_app ejecutado sin éxito" >> $LOG_PATH
+            echo "$DATE ERROR - Pull ejecutado sin éxito" >> $LOG_SCRIPT
             exit 1
         fi
-    else
-        echo "$DATE ERROR - Pull ejecutado sin éxito" >> $LOG_PATH
-        exit 1
-    fi
-elif [[ $ENV = "PRE" ]]
-then
-    echo "*********************************************" >> $LOG_PATH_PRE
-    echo $DATE >> $LOG_PATH_PRE
-    echo "Entorno elegido: $ENV" >> $LOG_PATH_PRE
-    cd $SOURCE_CODE_PRE
-    $USR_BINARY/git checkout pre >> $LOG_PATH_PRE
-    $USR_BINARY/git checkout . >> $LOG_PATH_PRE
-    $USR_BINARY/git pull origin pre >> $LOG_PATH_PRE
-
-    if [[ $? -eq 0 ]]
+    elif [[ $ENV == "PRE" ]]
     then
-        echo "$DATE Pull ejecutado con éxito" >> $LOG_PATH_PRE
-        $USR_BINARY/docker restart flask_app_pre >> $LOG_PATH_PRE
+        cd $SOURCE_CODE_PRE
+        $USR_BINARY/git checkout pre >> $LOG_SCRIPT
+        $USR_BINARY/git checkout . >> $LOG_SCRIPT
+        $USR_BINARY/git pull origin pre >> $LOG_SCRIPT
 
         if [[ $? -eq 0 ]]
         then
-            echo "$DATE Restart de flask_app ejecutado con éxito" >> $LOG_PATH_PRE
-            exit 0
+            echo "$DATE Pull ejecutado con éxito" >> $LOG_SCRIPT
+            $USR_BINARY/docker restart flask_app_pre >> $LOG_SCRIPT
+
+            if [[ $? -eq 0 ]]
+            then
+                echo "$DATE Restart de flask_app ejecutado con éxito" >> $LOG_SCRIPT
+                exit 0
+            else
+                echo "$DATE ERROR - Restart de flask_app ejecutado sin éxito" >> $LOG_SCRIPT
+                exit 1
+            fi
         else
-            echo "$DATE ERROR - Restart de flask_app ejecutado sin éxito" >> $LOG_PATH_PRE
+            echo "$DATE ERROR - Pull ejecutado sin éxito" >> $LOG_SCRIPT
             exit 1
         fi
     else
-        echo "$DATE ERROR - Pull ejecutado sin éxito" >> $LOG_PATH_PRE
+        echo "$DATE ERROR - El parámetro indicado no corresponde a ninguno de los entornos disponibles [ PRO / PRE ]" >> $LOG_SCRIPT
         exit 1
     fi
 else
-    echo "*********************************************" >> $LOG_ERROR_ENV
-    echo $DATE >> $LOG_ERROR_ENV
-    echo "Entorno elegido: $ENV" >> $LOG_ERROR_ENV
-    echo "$DATE ERROR - El parámetro indicado no corresponde a ninguno de los entornos disponibles [ PRO / PRE ]" >> $LOG_ERROR_ENV
+    echo "*********************************************" >> $LOG_SCRIPT
+    echo $DATE >> $LOG_SCRIPT
+    echo "$DATE ERROR - No se ha enviado ningún parámetro al script para indicar el entorno: $ENV" >> $LOG_SCRIPT
     exit 1
 fi

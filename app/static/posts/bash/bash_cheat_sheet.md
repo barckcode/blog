@@ -125,7 +125,7 @@ Algunos operadores que podemos usar en nuestras condiciones.
 
 - Mayor que ->   **\>**
 - Menor que ->   **<**
-- Igual que ->   **=**
+- Igual que ->   **==**
 - Distinto de ->   **!=**
 
 **Para comparar números enteros:**
