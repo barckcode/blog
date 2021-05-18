@@ -1,11 +1,18 @@
 ---
-- name: Change script deploy permissions
-  ansible.builtin.file:
+- name: Change script deploy permissions - PRO
+  file:
     path: /var/www/helmcode.com/scripts/deploy.sh
     owner: root
     group: root
     mode: '0744'
 
+- name: Change script deploy permissions - PRE
+  file:
+    path: /var/www/pre_helmcode.com/scripts/deploy.sh
+    owner: root
+    group: root
+    mode: '0744'
+
 - name: Run a deploy script
-  command: /var/www/helmcode.com/scripts/deploy.sh "{{ environment }}"
+  script: /var/www/helmcode.com/scripts/deploy.sh --some-argument "{{ environment }}"
   when: environment is defined
