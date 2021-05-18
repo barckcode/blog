@@ -52,6 +52,7 @@ then
         exit 1
     fi
 elif [[ $ENV = "PRE" ]]
+then
     echo "*********************************************" >> $LOG_PATH_PRE
     echo $DATE >> $LOG_PATH_PRE
     echo "Entorno elegido: $ENV" >> $LOG_PATH_PRE
