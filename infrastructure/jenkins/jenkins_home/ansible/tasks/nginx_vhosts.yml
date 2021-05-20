@@ -19,6 +19,9 @@
   loop:
     - { src_dest: helmcode_com.conf }
     - { src_dest: pre_helmcode_com.conf }
+    - { src_dest: weather_helmcode_com.conf }
+    - { src_dest: rick-and-morty_helmcode_com.conf }
+    - { src_dest: web-infographics_helmcode_com.conf }
 
 - name: Restart ngnix
   systemd:
