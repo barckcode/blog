@@ -12,3 +12,4 @@
     - certbot
     - python3-certbot-nginx
     - apache2-utils
+    - htop

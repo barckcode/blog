@@ -6,7 +6,12 @@
 # deploy                - Deploy in production
 # nginx_vhosts          - Configure vhosts
 ##########################################################################
-- hosts: aragon
+######################## Hosts:
+#- hosts: aragon
+#- hosts: worker01
+######################## Groups:
+#- hosts: web
+#- hosts: swarm
 
   tasks:
     - include: tasks/test.yml
