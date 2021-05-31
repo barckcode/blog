@@ -1,8 +1,0 @@
----
-#####
-# Vhosts:
-#####
-
-src_vhosts_path: /var/jenkins_home/ansible/conf/aragon/vhosts
-dest_vhosts_available_path: /etc/nginx/sites-available
-dest_vhosts_enabled_path: /etc/nginx/sites-enabled

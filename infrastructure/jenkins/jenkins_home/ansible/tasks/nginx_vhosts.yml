@@ -23,6 +23,25 @@
     - { src_dest: rick-and-morty_helmcode_com.conf }
     - { src_dest: web-infographics_helmcode_com.conf }
 
+- name: Create a vhosts directories
+  file:
+    path: "/var/www/{{ item.src_dest }}"
+    state: directory
+  loop:
+    - { src_dest: 'helmcode.com' }
+    - { src_dest: 'pre_helmcode.com' }
+
+- name: Copy of private files
+  copy:
+    src: "{{ item.prod_env }}"
+    dest: "/var/www/{{ item.prod_vhost }}/"
+    owner: root
+    group: root
+    mode: 0644
+  loop:
+    - { prod_env: '"{{ src_private_files_path }}"/prod.env',  prod_vhost: 'helmcode.com' }
+    - { prod_env: '"{{ src_private_files_path }}"/test.env',  prod_vhost: 'pre_helmcode.com' }
+
 - name: Restart ngnix
   systemd:
     name: nginx
