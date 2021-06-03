@@ -1,22 +1,28 @@
 ---
 ############################# TAGS FOR TASKS #############################
 # test                  - Test
+# deploy                - Deploy in production
 # install_apt_packages  - Install packages whit apt
 # install_docker        - Install docker and docker-compose for debian
-# deploy                - Deploy in production
 # nginx_vhosts          - Configure vhosts
+# ssh_rsa               - Copy SSH KEY RSA file
 ##########################################################################
 ######################## Hosts:
-#- hosts: aragon
-- hosts: worker01
+#- hosts: web01
+- hosts: bbdd01
 ######################## Groups:
 #- hosts: web
 #- hosts: swarm
+#- hosts: bbdd
 
   tasks:
     - include: tasks/test.yml
       tags:
         - test
+
+    - include: tasks/deploy.yml
+      tags:
+        - deploy
 
     - include: tasks/install_apt_packages.yml
       tags:
@@ -26,10 +32,10 @@
       tags:
         - install_docker
 
-    - include: tasks/deploy.yml
-      tags:
-        - deploy
-
     - include: tasks/nginx_vhosts.yml
       tags:
         - nginx_vhosts
+
+    - include: tasks/ssh_rsa.yml
+      tags:
+        - ssh_rsa
