@@ -1,6 +1,7 @@
 #
 # Segurity Groups
 ##
+# WEB
 resource "aws_security_group" "web_sg" {
   name        = "web_sg"
   description = "Allow inbound traffic"
@@ -32,7 +33,36 @@ resource "aws_security_group" "web_sg" {
 
 
   tags = {
-    Name     = "allow_aragon_sg"
+    Name     = "web_sg"
+    Creation = "terraform"
+  }
+}
+
+# MYSQL BBDD
+resource "aws_security_group" "mysql_sg" {
+  name        = "mysql_sg"
+  description = "Allow inbound traffic"
+  vpc_id      = aws_vpc.main.id
+
+  ingress {
+    description = "SSH from VPC"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.1.0/24"]
+  }
+
+  ingress {
+    description = "MYSQL from VPC"
+    from_port   = 3306
+    to_port     = 3306
+    protocol    = "tcp"
+    cidr_blocks = ["10.0.1.0/24"]
+  }
+
+
+  tags = {
+    Name     = "mysql_sg"
     Creation = "terraform"
   }
 }
