@@ -21,18 +21,18 @@ resource "aws_instance" "bbdd01" {
 
 
 # Elastic IP
-resource "aws_eip" "bbdd01_public_ip" {
-  vpc = true
+# resource "aws_eip" "bbdd01_public_ip" {
+#   vpc = true
 
-  instance                  = aws_instance.bbdd01.id
-  associate_with_private_ip = "10.0.1.110"
-  depends_on                = [aws_internet_gateway.main_internet_gw]
+#   instance                  = aws_instance.bbdd01.id
+#   associate_with_private_ip = "10.0.1.110"
+#   depends_on                = [aws_internet_gateway.main_internet_gw]
 
-  tags = {
-    Name     = "bbdd01_public_ip"
-		Creation = "terraform"
-  }
-}
+#   tags = {
+#     Name     = "bbdd01_public_ip"
+# 		Creation = "terraform"
+#   }
+# }
 
 
 # Attached Segurity Groups

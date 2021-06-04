@@ -38,6 +38,7 @@ resource "aws_security_group" "web_sg" {
   }
 }
 
+
 # MYSQL BBDD
 resource "aws_security_group" "mysql_sg" {
   name        = "mysql_sg"
@@ -51,6 +52,14 @@ resource "aws_security_group" "mysql_sg" {
     protocol    = "tcp"
     cidr_blocks = ["10.0.1.0/24"]
   }
+
+  # ingress {
+  #   description = "SSH from all"
+  #   from_port   = 22
+  #   to_port     = 22
+  #   protocol    = "tcp"
+  #   cidr_blocks = ["0.0.0.0/0"]
+  # }
 
   ingress {
     description = "MYSQL from VPC"
