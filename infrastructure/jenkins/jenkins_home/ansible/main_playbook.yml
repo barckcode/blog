@@ -9,11 +9,12 @@
 ##########################################################################
 ######################## Hosts:
 #- hosts: web01
-- hosts: bbdd01
+#- hosts: bbdd01
 ######################## Groups:
 #- hosts: web
 #- hosts: swarm
 #- hosts: bbdd
+- hosts: blog
 
   tasks:
     - include: tasks/test.yml

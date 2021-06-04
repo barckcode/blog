@@ -1,15 +1,17 @@
 ---
-- name: Install software whit apt
+- name: Install comun software whit apt
   apt:
     update_cache: yes
     state: latest
     pkg:
     - fail2ban
-    - nginx
-    - python3-pip
-    - git-all
-    - mysql-server
-    - certbot
-    - python3-certbot-nginx
-    - apache2-utils
     - htop
+    - python3-pip
+
+- name: Install additional software whit apt
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+    state: latest
+  with_items: "{{ list_additional_pkg }}"
+  when: list_additional_pkg is defined

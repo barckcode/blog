@@ -5,6 +5,12 @@
 ssh_key_path: /var/jenkins_home/ansible/conf/private/ssh/aws_id_rsa
 
 #####
+# List of apt packages to install:
+#####
+list_additional_pkg:
+  - git-all
+
+#####
 # Vhosts:
 #####
 src_vhosts_path: /var/jenkins_home/ansible/conf/aragon/vhosts
