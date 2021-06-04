@@ -18,14 +18,13 @@ def get_data_of_table(db_table):
         records = cursor.fetchall()
         print(f"Total number of rows in {db_table} is: {cursor.rowcount}")
 
-        return records
-
-    except Error as e:
-        query_error = f"Error reading data from MySQL {db_table} table: {e}"
-        return query_error
-
-    finally:
         if (connection.is_connected()):
             connection.close()
             cursor.close()
             print("MySQL connection is closed")
+
+        return records
+
+    except Error as e:
+        query_error = f"Error al conectarse a la base de datos"
+        return query_error
