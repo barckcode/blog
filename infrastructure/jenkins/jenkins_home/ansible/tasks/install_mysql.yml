@@ -1,0 +1,30 @@
+---
+- name: Install GnuPG, the GNU Privacy Guard
+  apt:
+    name: gnupg2
+    update_cache: yes
+    state: latest
+
+- name: Fetch the repository packages from Percona web
+  get_url:
+    url: https://repo.percona.com/apt/percona-release_latest.stretch_all.deb
+    dest: /tmp/percona-release_latest.stretch_all.deb
+
+- name: Install the downloaded package
+  apt: deb="/tmp/percona-release_latest.stretch_all.deb"
+
+- name: Enable the repository
+  shell: percona-release setup ps80
+
+- name: Install the Percona Server
+  apt:
+    name: percona-server-server
+    update_cache: yes
+    state: latest
+
+- name: Create User Defined Functions (UDF) from Percona Toolkit
+  shell: "{{ item }}"
+  loop:
+   - mysql -e "CREATE FUNCTION fnvla_64 RETURNS INTEGER SONAME 'libfnvla_udf.so'"
+   - mysql -e "CREATE FUNCTION fnv_64 RETURNS INTEGER SONAME 'libfnv_udf.so'"
+   - mysql -e "CREATE FUNCTION murmur_hash RETURNS INTEGER SONAME 'libmurmur_udf.so'"

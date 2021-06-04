@@ -13,5 +13,5 @@
     name: "{{ item }}"
     update_cache: yes
     state: latest
-  with_items: "{{ list_additional_pkg }}"
+  loop: "{{ list_additional_pkg }}"
   when: list_additional_pkg is defined

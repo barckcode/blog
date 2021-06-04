@@ -4,6 +4,7 @@
 # deploy                - Deploy in production
 # install_apt_packages  - Install packages whit apt
 # install_docker        - Install docker and docker-compose for debian
+# install_mysql         - Install Percona Server for MySQL
 # nginx_vhosts          - Configure vhosts
 # ssh_rsa               - Copy SSH KEY RSA file
 ##########################################################################
@@ -13,13 +14,17 @@
 ######################## Groups:
 #- hosts: web
 #- hosts: swarm
-#- hosts: bbdd
-- hosts: blog
+- hosts: bbdd
+#- hosts: blog
 
   tasks:
     - include: tasks/test.yml
       tags:
         - test
+
+    - include: tasks/copy_tmp_files.yml
+      tags:
+        - copy_tmp_files
 
     - include: tasks/deploy.yml
       tags:
@@ -32,6 +37,10 @@
     - include: tasks/install_docker.yml
       tags:
         - install_docker
+
+    - include: tasks/install_mysql.yml
+      tags:
+        - install_mysql
 
     - include: tasks/nginx_vhosts.yml
       tags:

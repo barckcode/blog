@@ -1,0 +1,10 @@
+---
+- name: Copy temporal files to hosts
+  copy:
+    src: "{{ item }}"
+    dest: "/tmp/"
+    owner: root
+    group: root
+    mode: 0700
+  loop: "{{ list_tmp_files }}"
+  when: list_tmp_files is defined
