@@ -1,0 +1,38 @@
+# Ansible Host
+bbdd01 ansible_host=10.0.1.110 ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p admin@108.128.223.195"'
+
+# Create network.
+docker network create --driver overlay net_app
+
+
+docker service create \
+--name db_app \
+--env MYSQL_ROOT_PASSWORD=temporal \
+--mount type=volume,source=app_data,destination=/var/lib/mysql \
+--network net_app \
+--replicas 1 \
+mysql/mysql-server:5.7
+
+docker service create \
+--name flask_app \
+--publish published=5000,target=5000 \
+--env FLASK_APP=main.py \
+--env FLASK_ENV=production \
+--env DB_HOST=db_app \
+--env DB_DATABASE=posts \
+--env DB_USER=root \
+--env DB_PASSWORD=temporal \
+--mount type=bind,source=/var/www/helmcode.com,destination=/app \
+--network net_app \
+--replicas 2 \
+helmcodecom_flask flask run --host=0.0.0.0
+
+
+
+# Registy
+docker run -d \
+  -p 5000:5000 \
+  --restart=always \
+  --name registry \
+  -v /mnt/registry:/var/lib/registry \
+  registry:2
