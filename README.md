@@ -16,4 +16,4 @@ Repository with the personal apps that I have developed and all automation and i
 - Terraform: All infrastructure is written as code with Terraform.
 - AWS: All infrastructure is deployed in AWS.
 
-![](https://github.com/helmcode/apps/tree/main/infrastructure/architecture_diagrams/architecture.png)
+![](https://github.com/helmcode/apps/blob/main/infrastructure/architecture_diagrams/architecture.png)
