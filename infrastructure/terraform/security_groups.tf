@@ -46,12 +46,20 @@ resource "aws_security_group" "web_sg" {
   vpc_id      = aws_vpc.main.id
 
   ingress {
-    description = "SSH from all"
+    description = "SSH from VPC"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["10.0.1.0/24"]
   }
+
+  # ingress {
+  #   description = "SSH from all"
+  #   from_port   = 22
+  #   to_port     = 22
+  #   protocol    = "tcp"
+  #   cidr_blocks = ["0.0.0.0/0"]
+  # }
 
   ingress {
     description = "HTTP"
