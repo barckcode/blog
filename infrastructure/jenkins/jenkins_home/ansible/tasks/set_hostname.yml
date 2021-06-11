@@ -1,0 +1,14 @@
+---
+- name: Set a hostname
+  hostname:
+    name: "{{ hostname_server }}"
+
+- name: Update the /etc/hosts file with hostname
+  tags: etchostsupdate
+  become: yes
+  become_user: root
+  lineinfile:
+    dest: "/etc/hosts"
+    line: "127.0.1.1 {{ hostname_server }}"
+    state: present
+    #backup: yes

@@ -7,14 +7,16 @@
 # install_mysql         - Install Percona Server for MySQL
 # nginx_vhosts          - Configure vhosts
 # ssh_rsa               - Copy SSH KEY RSA file
+# set_hostname          - Set a hostname
 ##########################################################################
 ######################## Hosts:
+- hosts: sauron
 #- hosts: web01
 #- hosts: bbdd01
 ######################## Groups:
 #- hosts: web
 #- hosts: swarm
-- hosts: bbdd
+#- hosts: bbdd
 #- hosts: blog
 
   tasks:
@@ -49,3 +51,7 @@
     - include: tasks/ssh_rsa.yml
       tags:
         - ssh_rsa
+
+    - include: tasks/set_hostname.yml
+      tags:
+        - set_hostname

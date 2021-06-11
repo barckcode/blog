@@ -1,0 +1,10 @@
+#####
+# Hostname:
+#####
+hostname_server: sauron
+
+#####
+# List of apt packages to install:
+#####
+list_additional_pkg:
+  - git-all
