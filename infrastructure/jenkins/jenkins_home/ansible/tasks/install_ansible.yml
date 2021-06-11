@@ -1,0 +1,10 @@
+---
+- name: Create User Defined Functions (UDF) from Percona Toolkit
+  shell: apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+
+- name: Update apt and Install Ansible
+  apt:
+    update_cache: yes
+    state: latest
+    pkg:
+    - ansible

@@ -2,8 +2,10 @@
 ############################# TAGS FOR TASKS #############################
 # test                  - Test
 # deploy                - Deploy in production
+# install_ansible       - Install Ansible
 # install_apt_packages  - Install packages whit apt
-# install_docker        - Install docker and docker-compose for debian
+# install_docker        - Install Docker and docker-compose for debian
+# install_jenkins       - Install Jenkins
 # install_mysql         - Install Percona Server for MySQL
 # nginx_vhosts          - Configure vhosts
 # ssh_rsa               - Copy SSH KEY RSA file
@@ -32,6 +34,10 @@
       tags:
         - deploy
 
+    - include: tasks/install_ansible.yml
+      tags:
+        - install_ansible
+
     - include: tasks/install_apt_packages.yml
       tags:
         - install_apt_packages
@@ -39,6 +45,10 @@
     - include: tasks/install_docker.yml
       tags:
         - install_docker
+
+    - include: tasks/install_jenkins.yml
+      tags:
+        - install_jenkins
 
     - include: tasks/install_mysql.yml
       tags:

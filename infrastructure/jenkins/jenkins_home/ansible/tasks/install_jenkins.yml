@@ -1,0 +1,23 @@
+---
+- name: Update apt and install openjdk
+  apt:
+    update_cache: yes
+    state: latest
+    pkg:
+    - openjdk-8-jdk
+
+- name: Add Jenkins PGP apt Key
+  apt_key:
+    url: https://pkg.jenkins.io/debian/jenkins.io.key
+    state: present
+
+- name: Add Jenkins Repository
+  apt_repository:
+    repo: deb https://pkg.jenkins.io/debian-stable binary/
+    state: present
+
+- name: Install Jenkins
+  apt:
+    name: jenkins
+    update_cache: yes
+    state: latest

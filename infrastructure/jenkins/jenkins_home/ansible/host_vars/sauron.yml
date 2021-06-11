@@ -8,3 +8,4 @@ hostname_server: sauron
 #####
 list_additional_pkg:
   - git-all
+  - nginx
