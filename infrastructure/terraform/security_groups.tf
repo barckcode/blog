@@ -1,6 +1,51 @@
 #
 # Segurity Groups
 ##
+# ALB_Public
+resource "aws_security_group" "alb_public_sg" {
+  name        = "alb_public_sg"
+  description = "Allow inbound traffic"
+  vpc_id      = aws_vpc.main.id
+
+  ingress {
+    description = "HTTP"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "Jenkins"
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "HTTPS"
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+
+  tags = {
+    Name     = "alb_public_sg"
+    Creation = "terraform"
+  }
+}
+
+
 # Sauron
 resource "aws_security_group" "sauron_sg" {
   name        = "sauron_sg"
@@ -38,7 +83,6 @@ resource "aws_security_group" "sauron_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
 
   tags = {
     Name     = "sauron_sg"
@@ -85,7 +129,6 @@ resource "aws_security_group" "web_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-
   tags = {
     Name     = "web_sg"
     Creation = "terraform"
@@ -122,7 +165,6 @@ resource "aws_security_group" "mysql_sg" {
     protocol    = "tcp"
     cidr_blocks = ["10.0.1.0/24"]
   }
-
 
   tags = {
     Name     = "mysql_sg"

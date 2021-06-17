@@ -5,9 +5,9 @@
 resource "aws_instance" "sauron" {
   ami           = local.default_ami
   instance_type = local.default_instance_type
-  subnet_id   = aws_subnet.main_subnet_01.id
-  private_ip = "10.0.1.10"
-  key_name = "ssh_key"
+  subnet_id     = aws_subnet.main_subnet_01.id
+  private_ip    = "10.0.1.10"
+  key_name      = "ssh_key"
 
   root_block_device {
     volume_size = 30

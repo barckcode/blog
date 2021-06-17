@@ -20,6 +20,17 @@ resource "aws_subnet" "main_subnet_01" {
   }
 }
 
+resource "aws_subnet" "main_subnet_02" {
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.0.2.0/24"
+  availability_zone = "eu-west-1b"
+
+  tags = {
+    Name = "main_subnet_02",
+    Creation = "terraform",
+  }
+}
+
 resource "aws_internet_gateway" "main_internet_gw" {
   vpc_id = aws_vpc.main.id
 
