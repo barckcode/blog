@@ -133,6 +133,7 @@ images
 **/jenkins_home/.owner
 
 # Ansible
+**/private/**
 **/ansible/private
 **/ansible/.ansible
 **/jenkins_home/ansible/private
