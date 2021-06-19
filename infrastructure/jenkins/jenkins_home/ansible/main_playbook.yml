@@ -10,16 +10,18 @@
 # nginx_vhosts          - Configure vhosts
 # ssh_rsa               - Copy SSH KEY RSA file
 # set_hostname          - Set a hostname
+# system_users          - Config System Users
 ##########################################################################
 ######################## Hosts:
-- hosts: sauron
+#- hosts: sauron
 #- hosts: web01
 #- hosts: bbdd01
 ######################## Groups:
-#- hosts: web
-#- hosts: swarm
-#- hosts: bbdd
+#- hosts: global
 #- hosts: blog
+#- hosts: swarm
+- hosts: web
+#- hosts: bbdd
 
   tasks:
     - include: tasks/test.yml
@@ -65,3 +67,7 @@
     - include: tasks/set_hostname.yml
       tags:
         - set_hostname
+
+    - include: tasks/system_users.yml
+      tags:
+        - system_users

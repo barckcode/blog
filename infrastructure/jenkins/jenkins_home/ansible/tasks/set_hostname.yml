@@ -12,3 +12,15 @@
     line: "127.0.1.1 {{ hostname_server }}"
     state: present
     #backup: yes
+
+- name: Update the /etc/hosts file with hostname
+  tags: etchostsupdate
+  become: yes
+  become_user: root
+  lineinfile:
+    dest: "/etc/hosts"
+    line: "{{ item }}"
+    state: present
+    #backup: yes
+  loop: "{{ hosts_list }}"
+  when: hosts_list is defined

@@ -5,6 +5,12 @@ hostname_server: sauron
 
 
 #####
+# SSH RSA:
+#####
+ssh_key_path: /var/jenkins_home/ansible/conf/private/ssh/aws_id_rsa
+
+
+#####
 # List of apt packages to install:
 #####
 list_additional_pkg:
@@ -17,10 +23,6 @@ list_additional_pkg:
 #####
 # Paths ansible conf:
 src_vhosts_path: /var/jenkins_home/ansible/conf/sauron/vhosts
-
-# Paths in host:
-dest_vhosts_available_path: /etc/nginx/sites-available
-dest_vhosts_enabled_path: /etc/nginx/sites-enabled
 
 symbolic_link_vhost:
   - ci_helmcode_com.conf

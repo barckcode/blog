@@ -1,7 +1,8 @@
 - name: Copy ssh key RSA to hosts
   copy:
     src: "{{ ssh_key_path }}"
-    dest: "/root/.ssh/"
-    owner: root
-    group: root
+    dest: "/home/admin/.ssh/"
+    owner: admin
+    group: admin
     mode: 0600
+  when: ssh_key_path is defined

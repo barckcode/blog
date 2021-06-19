@@ -1,0 +1,7 @@
+- name: adding admin to group www-data and docker
+  user:
+    name: '{{ item }}'
+    groups: www-data,docker
+    append: yes
+  loop: "{{ www_users }}"
+  when: www_users is defined

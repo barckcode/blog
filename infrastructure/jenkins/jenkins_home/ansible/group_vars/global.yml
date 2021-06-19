@@ -1,0 +1,14 @@
+#####
+# Vhosts:
+#####
+# Paths in host:
+dest_vhosts_available_path: /etc/nginx/sites-available
+dest_vhosts_enabled_path: /etc/nginx/sites-enabled
+
+
+#####
+# Hosts List:
+#####
+hosts_list:
+  - "10.0.1.100 web01"
+  - "10.0.1.110 bbdd01"

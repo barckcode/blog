@@ -8,6 +8,7 @@
     mode: 0644
   with_fileglob:
     - "{{ src_vhosts_path }}/*"
+  when: src_vhosts_path is defined
 
 - name: Create a symbolic link of vhosts
   file:
@@ -22,6 +23,8 @@
 - name: Create a vhosts directories
   file:
     path: "/var/www/{{ item }}"
+    owner: admin
+    group: www-data
     state: directory
   loop: "{{ root_dir_vhost }}"
   when: root_dir_vhost is defined

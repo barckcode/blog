@@ -4,6 +4,14 @@
 #####
 ssh_key_path: /var/jenkins_home/ansible/conf/private/ssh/aws_id_rsa
 
+
+#####
+# Config System Users:
+#####
+www_users:
+  - admin
+
+
 #####
 # List of apt packages to install:
 #####
@@ -14,7 +22,16 @@ list_additional_pkg:
 #####
 # Vhosts:
 #####
-src_vhosts_path: /var/jenkins_home/ansible/conf/aragon/vhosts
+# Paths ansible conf:
+src_vhosts_path: /var/jenkins_home/ansible/conf/web/vhosts
 # src_private_files_path: /var/jenkins_home/ansible/conf/web/private
-dest_vhosts_available_path: /etc/nginx/sites-available
-dest_vhosts_enabled_path: /etc/nginx/sites-enabled
+
+symbolic_link_vhost:
+  - helmcode_com.conf
+  - pre_helmcode_com.conf
+  - rick-and-morty_helmcode_com.conf
+  - weather_helmcode_com.conf
+  - web-infographics_helmcode_com.conf
+
+root_dir_vhost:
+  - helmcode_com
