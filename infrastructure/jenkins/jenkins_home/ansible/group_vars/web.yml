@@ -9,11 +9,12 @@ ssh_key_path: /var/jenkins_home/ansible/conf/private/ssh/aws_id_rsa
 #####
 list_additional_pkg:
   - git-all
+  - nginx
 
 #####
 # Vhosts:
 #####
 src_vhosts_path: /var/jenkins_home/ansible/conf/aragon/vhosts
-src_private_files_path: /var/jenkins_home/ansible/conf/web/private
+# src_private_files_path: /var/jenkins_home/ansible/conf/web/private
 dest_vhosts_available_path: /etc/nginx/sites-available
 dest_vhosts_enabled_path: /etc/nginx/sites-enabled
