@@ -20,7 +20,7 @@
 #- hosts: global
 #- hosts: blog
 #- hosts: swarm
-- hosts: web
+#- hosts: web
 #- hosts: bbdd
 
   tasks:

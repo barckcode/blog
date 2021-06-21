@@ -5,6 +5,13 @@ hostname_server: sauron
 
 
 #####
+# Config System Users:
+#####
+www_users:
+  - admin
+
+
+#####
 # SSH RSA:
 #####
 ssh_key_path: /var/jenkins_home/ansible/conf/private/ssh/aws_id_rsa

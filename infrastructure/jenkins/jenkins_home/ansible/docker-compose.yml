@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  ansible:
+    container_name: ansible
+    build: .
+    volumes:
+      - .:/ansible
+    networks:
+      - net
+
+networks:
+  net:
