@@ -20,7 +20,7 @@
   loop: "{{ symbolic_link_vhost }}"
   when: symbolic_link_vhost is defined
 
-- name: Create a vhosts directories
+- name: Create vhosts directories
   file:
     path: "/var/www/{{ item }}"
     owner: admin

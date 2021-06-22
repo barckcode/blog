@@ -14,7 +14,7 @@ www_users:
 #####
 # SSH RSA:
 #####
-ssh_key_path: /var/jenkins_home/ansible/conf/private/ssh/aws_id_rsa
+ssh_key_path: /ansible/conf/private/ssh/aws_id_rsa
 
 
 #####
@@ -29,7 +29,7 @@ list_additional_pkg:
 # Vhosts:
 #####
 # Paths ansible conf:
-src_vhosts_path: /var/jenkins_home/ansible/conf/sauron/vhosts
+src_vhosts_path: /ansible/conf/sauron/vhosts
 
 symbolic_link_vhost:
   - ci_helmcode_com.conf

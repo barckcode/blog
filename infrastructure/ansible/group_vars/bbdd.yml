@@ -2,11 +2,11 @@
 #####
 # SSH RSA:
 #####
-ssh_key_path: /var/jenkins_home/ansible/conf/private/ssh/aws_id_rsa
+ssh_key_path: /ansible/conf/private/ssh/aws_id_rsa
 
 
 #####
 # Temporal files:
 #####
 list_tmp_files:
-  - /var/jenkins_home/ansible/conf/private/db/posts_test_dump.sql.bz2
+  - /ansible/conf/private/db/posts_test_dump.sql.bz2

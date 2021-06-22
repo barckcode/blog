@@ -1,22 +1,18 @@
 ---
-- name: Change script deploy permissions - PRO
+- name: Create scripts directories
   file:
-    path: /var/www/helmcode.com/scripts/deploy.sh
-    owner: root
-    group: root
-    mode: '0744'
+    path: "/home/admin/scripts"
+    owner: admin
+    group: admin
+    state: directory
+    mode: 0775
 
-- name: Change script deploy permissions - PRE
-  file:
-    path: /var/www/pre_helmcode.com/scripts/deploy.sh
-    owner: root
-    group: root
-    mode: '0744'
-
-- name: Debug de la variable administrada desde Jenkins
-  debug:
-    var: ENV
-
-- name: Run a deploy script
-  shell: /var/www/helmcode.com/scripts/deploy.sh "{{ ENV }}"
-  when: ENV is defined
+- name: Copy scripts with owner and permissions
+  copy:
+    src: "{{ item }}"
+    dest: "/home/admin/scripts/"
+    owner: jenkins
+    group: admin
+    mode: 0774
+  with_fileglob:
+    - "/ansible/conf/sauron/scripts/deploy/*"
