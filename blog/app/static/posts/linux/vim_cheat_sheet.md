@@ -3,6 +3,7 @@ Title: Vim Cheat Sheet
 Authors: helmcode
 Date: 11/12/2020
 Categories: Linux
+Published: Yes
 ---
 
 # Vim Cheat Sheet

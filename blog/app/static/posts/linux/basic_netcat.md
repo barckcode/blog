@@ -3,6 +3,7 @@ Title: Uso básico de Netcat
 Authors: helmcode
 Date: 21/11/2020
 Categories: Linux
+Published: Yes
 ---
 
 # Uso básico de Netcat
