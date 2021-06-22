@@ -1,7 +1,7 @@
 ---
 ############################# TAGS FOR TASKS #############################
 # test                  - Test
-# deploy                - Deploy in production
+# config_deploy         - Config env to deploy
 # install_ansible       - Install Ansible
 # install_apt_packages  - Install packages whit apt
 # install_docker        - Install Docker and docker-compose for debian
@@ -32,9 +32,9 @@
       tags:
         - copy_tmp_files
 
-    - include: tasks/deploy.yml
+    - include: tasks/config_deploy.yml
       tags:
-        - deploy
+        - config_deploy
 
     - include: tasks/install_ansible.yml
       tags:
