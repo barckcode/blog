@@ -1,6 +1,6 @@
 #!/bin/bash
 # Autor: Barckcode
-# Version: 0.1
+# Version: 1.0
 # Description: Script to deploy
 
 LOG="/tmp/deploy.log"
