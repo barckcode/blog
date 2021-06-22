@@ -4,6 +4,13 @@
 # Description: Script to deploy
 
 LOG="/tmp/deploy.log"
-BLOG_SERVICE="flask_blog"
+DEPLOY_SCRIPT="/tmp/deploy.sh"
+APP_SERVICE="$1"
 
-docker service update $BLOG_SERVICE --force >> $LOG
+echo "****************************" >> $LOG
+echo "-> Actualizando el servicio: $APP_SERVICE" >> $LOG
+docker service update $APP_SERVICE --force >> $LOG
+
+echo "-> Eliminando el script temporal de deploy: $DEPLOY_SCRIPT" >> $LOG
+rm $DEPLOY_SCRIPT >> $LOG
+echo "-> Deploy ejecutado con éxito!" >> $LOG
