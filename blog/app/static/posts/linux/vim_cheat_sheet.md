@@ -2,7 +2,9 @@
 Title: Vim Cheat Sheet
 Authors: helmcode
 Date: 11/12/2020
-Categories: Linux
+Categories: linux
+File: vim_cheat_sheet
+Description: Listado de atajos, comandos, ejemplos e info relevante para sentirte lo más cómodo posible al usar Vim.
 Published: Yes
 ---
 

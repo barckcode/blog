@@ -2,7 +2,9 @@
 Title: Bash Cheat Sheet
 Authors: helmcode
 Date: 13/09/2020
-Categories: Bash
+Categories: bash
+File: bash_cheat_sheet
+Description: En este doc vas a encontrar un listado de comandos y ejemplos de pequeños fragmentos de scripts de Bash.
 Published: Yes
 ---
 

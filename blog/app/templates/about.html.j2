@@ -2,6 +2,20 @@
 {% block title %}About{% endblock %}
 {% block head %}
     {{ super() }}
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@helmcode">
+    <meta name="twitter:title" content="Sobre Helmcode">
+    <meta name="twitter:description" content="¿Quién es Helmcode?">
+    <meta name="twitter:creator" content="@helmcode">
+    <meta name="twitter:image" content="https://s3.eu-west-1.amazonaws.com/static.helmcode.com/images/home/portada.jpg">
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Sobre Helmcode" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://helmcode.com/about" />
+    <meta property="og:image" content="https://s3.eu-west-1.amazonaws.com/static.helmcode.com/images/home/portada.jpg" />
+    <meta property="og:description" content="¿Quién es Helmcode?" />
+    <meta property="og:site_name" content="Helmcode" />
     <link rel="stylesheet" href="/static/css/templates/about.css" />
 {% endblock %}
 {% block main %}

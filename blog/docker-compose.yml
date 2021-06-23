@@ -1,6 +1,17 @@
 version: "3.9"
 
 services:
+  db_host:
+    container_name: db_app
+    image: mysql/mysql-server:8.0
+    env_file:
+      - ./.env
+    environment:
+      - "MYSQL_ROOT_PASSWORD=${DB_PASSWORD}"
+    volumes:
+      - app_data:/var/lib/mysql
+    networks:
+      - net_app
   flask:
     container_name: flask_app
     build: .
@@ -11,17 +22,6 @@ services:
       - ./.env
     ports:
       - 5000:5000
-    networks:
-      - net_app
-  db_host:
-    container_name: db_app
-    image: mysql/mysql-server:8.0
-    env_file:
-      - ./.env
-    environment:
-      - "MYSQL_ROOT_PASSWORD=${DB_PASSWORD}"
-    volumes:
-      - app_data:/var/lib/mysql
     networks:
       - net_app
 

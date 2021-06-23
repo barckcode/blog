@@ -2,7 +2,9 @@
 Title: Salud Mental
 Authors: helmcode
 Date: 22/06/2021
-Categories: Lifestyle
+Categories: lifestyle
+File: mental_health
+Description: Salud mental, qué es y por qué es importante cuidarla desde mi punto de vista.
 Published: No
 ---
 

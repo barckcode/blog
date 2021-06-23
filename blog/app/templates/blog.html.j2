@@ -3,6 +3,20 @@
 {% block title %}Blog{% endblock %}
 {% block head %}
     {{ super() }}
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@helmcode">
+    <meta name="twitter:title" content="Blog de Helmcode">
+    <meta name="twitter:description" content="Posts sobre Linux, Docker, Kubernetes, IaC, Python y todo lo que tenga que ver con Infraestructura enfocada principalmente en Desarrollo Web.">
+    <meta name="twitter:creator" content="@helmcode">
+    <meta name="twitter:image" content="https://s3.eu-west-1.amazonaws.com/static.helmcode.com/images/home/portada.jpg">
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Blog de Helmcode" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://helmcode.com/blog" />
+    <meta property="og:image" content="https://s3.eu-west-1.amazonaws.com/static.helmcode.com/images/home/portada.jpg" />
+    <meta property="og:description" content="Posts sobre Linux, Docker, Kubernetes, IaC, Python y todo lo que tenga que ver con Infraestructura enfocada principalmente en Desarrollo Web." />
+    <meta property="og:site_name" content="Helmcode" />
     <link rel="stylesheet" href="/static/css/components/get_posts.css" />
 {% endblock %}
 {% block main %}

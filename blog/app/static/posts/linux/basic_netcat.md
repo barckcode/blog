@@ -2,7 +2,9 @@
 Title: Uso básico de Netcat
 Authors: helmcode
 Date: 21/11/2020
-Categories: Linux
+Categories: linux
+File: basic_netcat
+Description: Netcat es una herramienta de análisis de red que permite abrir puertos, transferir archivos, chatear, obtener una shell de un host remoto y muchas cosas mas.
 Published: Yes
 ---
 
