@@ -1,7 +1,7 @@
 from flask import render_template
 
 # Internal modules
-from app import create_app, home_template_vars, post_markdown_data, post_markdown_metadata, last_posts, all_posts
+from app import create_app, home_template_vars, post_markdown_data, post_markdown_metadata, last_posts, all_posts, all_categories
 
 # Init APP
 app = create_app()
@@ -10,6 +10,7 @@ app = create_app()
 home_data = home_template_vars()
 records_data = last_posts()
 all_records_data = all_posts()
+all_categories = all_categories()
 
 ########## Router and Views ##########
 @app.route('/')
@@ -18,7 +19,8 @@ def home_page():
         'home.html.j2',
         title = home_data[0],
         presentation = home_data[1],
-        records_data = records_data
+        records_data = records_data,
+        categories = all_categories
     )
 
 

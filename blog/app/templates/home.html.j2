@@ -1,5 +1,6 @@
 {% extends "layouts/base.html.j2" %}
 {% from 'components/get_posts.html.j2' import get_posts %}
+{% from 'components/get_categories.html.j2' import get_categories %}
 {% block title %}Home{% endblock %}
 {% block head %}
     {{ super() }}
@@ -56,8 +57,17 @@
         {% endfor %} #}
         {{ get_posts(records_data) }}
     </div>
-    <hr class="separator">
 
+    <div class="categories">
+        <h5 class="categories_title">
+            Artículos por temas:
+        </h5>
+        <div class="categories_container">
+            {{ get_categories(categories) }}
+        </div>
+    </div>
+
+    <hr class="separator">
     <div class="donation">
         <h5 class="donation_title">
             Colaboraciones:
