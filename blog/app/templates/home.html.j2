@@ -20,6 +20,7 @@
     <meta property="og:site_name" content="Helmcode" />
     <link rel="stylesheet" href="/static/css/templates/home.css" />
     <link rel="stylesheet" href="/static/css/components/get_posts.css" />
+    <link rel="stylesheet" href="/static/css/components/get_categories.css" />
 {% endblock %}
 {% block main %}
 <div class="portada">
@@ -58,13 +59,8 @@
         {{ get_posts(records_data) }}
     </div>
 
-    <div class="categories">
-        <h5 class="categories_title">
-            Artículos por temas:
-        </h5>
-        <div class="categories_container">
-            {{ get_categories(categories) }}
-        </div>
+    <div class="section_categories">
+        {{ get_categories(categories) }}
     </div>
 
     <hr class="separator">

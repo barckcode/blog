@@ -1,5 +1,6 @@
 {% extends "layouts/base.html.j2" %}
 {% from 'components/get_posts.html.j2' import get_posts %}
+{% from 'components/get_categories.html.j2' import get_categories %}
 {% block title %}Blog{% endblock %}
 {% block head %}
     {{ super() }}
@@ -17,22 +18,18 @@
     <meta property="og:image" content="https://s3.eu-west-1.amazonaws.com/static.helmcode.com/images/home/portada.jpg" />
     <meta property="og:description" content="Posts sobre Linux, Docker, Kubernetes, IaC, Python y todo lo que tenga que ver con Infraestructura enfocada principalmente en Desarrollo Web." />
     <meta property="og:site_name" content="Helmcode" />
+    <link rel="stylesheet" href="/static/css/templates/blog.css" />
+    <link rel="stylesheet" href="/static/css/components/get_categories.css" />
     <link rel="stylesheet" href="/static/css/components/get_posts.css" />
 {% endblock %}
 {% block main %}
-    {# <h1>
-        Barckcode
-    </h1>
-    <p>
-        {{texto}}
-    </p>
-    <a href="/blog/linux/basic_netcat">
-        Post
-    </a> #}
+    <div class="section_categories">
+        {{ get_categories(categories) }}
+    </div>
     <div class="posts">
-        {# <h3 class="posts_title">
-            Últimos posts:
-        </h3> #}
+        <h4 class="posts_title">
+            Todos los posts:
+        </h4>
         {{ get_posts(records_data) }}
     </div>
 {% endblock %}
