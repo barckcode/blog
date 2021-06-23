@@ -1,0 +1,16 @@
+.categories {
+  text-align: center;
+  padding: 1rem;
+}
+
+.categories_title {
+  padding-top: 1rem;
+}
+
+/* Categories */
+.categories_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 1rem;
+}

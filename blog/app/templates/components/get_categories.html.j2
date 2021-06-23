@@ -1,0 +1,16 @@
+{% macro get_categories(categories) -%}
+  <div class="categories">
+    <h4 class="categories_title">
+        Posts por temas:
+    </h4>
+    <div class="categories_container">
+      {% for row in categories %}
+      <div>
+        <a class="btn btn-primary" role="button" href="/category/{{ row[1] }}">
+          {{ row[1] }}
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{%- endmacro %}

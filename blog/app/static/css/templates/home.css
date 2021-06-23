@@ -32,16 +32,18 @@
     margin: 0 auto;
 }
 
-.posts {
-    text-align: center;
-    padding: 1rem;
-}
-
-.posts_title {
-    padding-top: 1rem;
-}
-
+/* Posts, Donation */
+.posts,
 .donation {
     text-align: center;
     padding: 1rem;
+}
+
+.posts_title,
+.donation_title {
+    padding-top: 1rem;
+}
+
+.section_categories {
+    padding-bottom: 4rem;
 }
