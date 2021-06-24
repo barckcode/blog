@@ -9,4 +9,4 @@ ssh_key_path: /ansible/conf/private/ssh/aws_id_rsa
 # Temporal files:
 #####
 list_tmp_files:
-  - /ansible/conf/private/db/posts_test_dump.sql.bz2
+  - /ansible/conf/bbdd/private/posts_dump.sql
