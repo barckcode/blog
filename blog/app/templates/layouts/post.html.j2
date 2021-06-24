@@ -18,6 +18,7 @@
     <meta property="og:image" content="https://s3.eu-west-1.amazonaws.com/static.helmcode.com/images/home/portada.jpg" />
     <meta property="og:description" content="{{ post_metadata.description[0] }}" />
     <meta property="og:site_name" content="Helmcode" />
+    {{ share.load() }}
 {% endblock %}
 {% block main %}
     {# <div>
@@ -26,4 +27,5 @@
     <div class="post">
         {{ post_data }}
     </div>
+    {{ share.create(title='Comparte en: ', sites='twitter,linkedin', align='center') }}
 {% endblock %}
