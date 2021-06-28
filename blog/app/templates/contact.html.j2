@@ -1,0 +1,60 @@
+{% extends "layouts/base.html.j2" %}
+{% block title %}Contact{% endblock %}
+{% block head %}
+    {{ super() }}
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@helmcode">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ presentation }}">
+    <meta name="twitter:creator" content="@helmcode">
+    <meta name="twitter:image" content="https://s3.eu-west-1.amazonaws.com/static.helmcode.com/images/home/portada.jpg">
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://helmcode.com/contact" />
+    <meta property="og:image" content="https://s3.eu-west-1.amazonaws.com/static.helmcode.com/images/home/portada.jpg" />
+    <meta property="og:description" content="{{ presentation }}" />
+    <meta property="og:site_name" content="Helmcode" />
+    <link rel="stylesheet" href="/static/css/templates/contact.css" />
+{% endblock %}
+{% block main %}
+  <main class="contact">
+    <div class="card-body">
+      <div class="contact_title card-title">
+        <h3>Contáctame:</h3>
+      </div>
+
+      {% for message in get_flashed_messages() %}
+        {% if message == "Mensaje enviado a Telegram" %}
+          <div class="alert alert-success" role="alert">{{ message }}</div>
+        {% else %}
+          <div class="alert alert-danger" role="alert">{{ message }}</div>
+        {% endif %}
+      {% endfor %}
+
+      <form action="{{ url_for('contact') }}" method=post class="contact_form">
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+          {{ form.name.label }}
+          {{ form.name }}
+        </div>
+
+        <div class="mb-3">
+          {{ form.email.label }}
+          {{ form.email }}
+        </div>
+
+        <div class="mb-3">
+          {{ form.message.label }}
+          {{ form.message }}
+        </div>
+
+        <div class="contact_button">
+          {{ form.submit }}
+        </div>
+      </form>
+    </div>
+  </main>
+{% endblock %}
