@@ -1,0 +1,42 @@
+{% extends "layouts/base.html.j2" %}
+{% block title %}Contact{% endblock %}
+{% block head %}
+    {{ super() }}
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@helmcode">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ presentation }}">
+    <meta name="twitter:creator" content="@helmcode">
+    <meta name="twitter:image" content="https://s3.eu-west-1.amazonaws.com/static.helmcode.com/images/home/portada.jpg">
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://helmcode.com/contact" />
+    <meta property="og:image" content="https://s3.eu-west-1.amazonaws.com/static.helmcode.com/images/home/portada.jpg" />
+    <meta property="og:description" content="{{ presentation }}" />
+    <meta property="og:site_name" content="Helmcode" />
+    <link rel="stylesheet" href="/static/css/templates/contact.css" />
+{% endblock %}
+{% block main %}
+  <h2>Contact</h2>
+
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+
+  <form action="{{ url_for('contact') }}" method=post>
+    {{ form.hidden_tag() }}
+
+    {{ form.name.label }}
+    {{ form.name }}
+
+    {{ form.email.label }}
+    {{ form.email }}
+
+    {{ form.message.label }}
+    {{ form.message }}
+
+    {{ form.submit }}
+  </form>
+{% endblock %}

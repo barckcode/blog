@@ -1,7 +1,8 @@
-from flask import render_template
+from flask import render_template, request, flash
 
 # Internal modules
-from app import create_app, home_template_vars, post_markdown_data, post_markdown_metadata, last_posts, all_posts, all_categories, posts_by_category
+from app import create_app, home_template_vars, post_markdown_data, post_markdown_metadata, last_posts, all_posts, all_categories, posts_by_category, ContactForm, send_message
+
 
 # Init APP
 app = create_app()
@@ -64,6 +65,28 @@ def about_page():
     return render_template(
         'about.html.j2',
     )
+
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    form = ContactForm()
+
+    if request.method == 'POST':
+        if form.validate() == False:
+            flash('El correo indicado no es válido.')
+            return render_template('contact.html.j2', form=form)
+        else:
+            name = form.name.data
+            email = form.email.data
+            message = form.message.data
+
+            resp = send_message(name, email, message)
+            flash(resp)
+            return render_template('contact.html.j2', form=form)
+
+    elif request.method == 'GET':
+        return render_template('contact.html.j2', form=form)
+
 
 #TEST
 # print('*' * 20)
