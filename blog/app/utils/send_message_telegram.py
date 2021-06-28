@@ -1,13 +1,13 @@
-import requests
+import requests, os
 
 def send_message(name, email, message):
-    URL= 'https://api.telegram.org/bot1313288615:AAEPcm_I_aSHai2HZdPy-oU3oAfzm4Gd_fk/sendMessage'
+    bot_token = os.getenv("BOT_TOKEN")
+    URL= "https://api.telegram.org/bot" + bot_token + "/sendMessage"
     headers = {
         'Content-Type': 'application/json',
     }
-    chat_id = '501502268'
-    text = 'Name: ' + name + '\nEmail: ' + email + '\nmensaje: ' + message
-    notification = False
+    chat_id = os.getenv("CHAT_ID")
+    text = "Name: " + name + "\nEmail: " + email + "\nMensaje: " + message
     data = '{"chat_id": "' + chat_id + '", "text": "' + text + '", "disable_notification": false"'+ '"}'
 
     try:

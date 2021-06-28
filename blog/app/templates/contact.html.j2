@@ -19,24 +19,42 @@
     <link rel="stylesheet" href="/static/css/templates/contact.css" />
 {% endblock %}
 {% block main %}
-  <h2>Contact</h2>
+  <main class="contact">
+    <div class="card-body">
+      <div class="contact_title card-title">
+        <h3>Contáctame:</h3>
+      </div>
 
-  {% for message in get_flashed_messages() %}
-    <div class="flash">{{ message }}</div>
-  {% endfor %}
+      {% for message in get_flashed_messages() %}
+        {% if message == "Mensaje enviado a Telegram" %}
+          <div class="alert alert-success" role="alert">{{ message }}</div>
+        {% else %}
+          <div class="alert alert-danger" role="alert">{{ message }}</div>
+        {% endif %}
+      {% endfor %}
 
-  <form action="{{ url_for('contact') }}" method=post>
-    {{ form.hidden_tag() }}
+      <form action="{{ url_for('contact') }}" method=post class="contact_form">
+        {{ form.hidden_tag() }}
 
-    {{ form.name.label }}
-    {{ form.name }}
+        <div class="mb-3">
+          {{ form.name.label }}
+          {{ form.name }}
+        </div>
 
-    {{ form.email.label }}
-    {{ form.email }}
+        <div class="mb-3">
+          {{ form.email.label }}
+          {{ form.email }}
+        </div>
 
-    {{ form.message.label }}
-    {{ form.message }}
+        <div class="mb-3">
+          {{ form.message.label }}
+          {{ form.message }}
+        </div>
 
-    {{ form.submit }}
-  </form>
+        <div class="contact_button">
+          {{ form.submit }}
+        </div>
+      </form>
+    </div>
+  </main>
 {% endblock %}
