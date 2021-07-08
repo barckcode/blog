@@ -1,0 +1,33 @@
+language: python
+
+git:
+  depth: 3
+
+branches:
+  only:
+    - "main"
+
+deploy:
+- provider: s3
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  local_dir: blog
+  skip_cleanup: true
+  on: &2
+    repo: organization/reponameHERE
+  bucket: yourBucketNameHERE
+  region: bucketRegionHERE
+- provider: codedeploy
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: yourBucketNameHERE
+  key: latest.zip
+  bundle_type: zip
+  application: NameOfTheCodeDeployApplicationNameHERE
+  deployment_group: CodeDeployDeploymentGroupNameHERE
+  region: serverRegionHERE
+  on: *2
+script:
+  - zip -r latest *
+  - mkdir -p blog
+  - mv latest.zip blog/latest.zip
