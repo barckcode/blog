@@ -8,5 +8,5 @@ hooks:
     - location: scripts/stop_blog.sh
       timeout: 300
   AfterInstall:
-    - location: scripts/restart_blog.sh
+    - location: /home/admin/scripts/restart_blog.sh
       timeout: 600
