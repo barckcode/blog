@@ -7,8 +7,6 @@ hooks:
   ApplicationStop:
     - location: scripts/stop_server.sh
       timeout: 300
-      runas: admin
   AfterInstall:
     - location: scripts/restart_blog.sh
       timeout: 600
-      runas: admin
