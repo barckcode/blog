@@ -5,8 +5,8 @@ files:
     destination: /var/www/helmcode_com
 hooks:
   ApplicationStop:
-    - location: /home/admin/scripts/stop_blog.sh
+    - location: infrastructure/ansible/conf/scripts/stop_blog.sh
       timeout: 300
   AfterInstall:
-    - location: /home/admin/scripts/after_install.sh
+    - location: infrastructure/ansible/conf/scripts/after_install.sh
       timeout: 600
