@@ -14,3 +14,4 @@ PRO_APP="flask_blog"
 
 ######################### SCRIPT
 /usr/bin/docker service update $PRO_APP --force
+exit 0

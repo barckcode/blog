@@ -5,8 +5,8 @@ files:
     destination: /var/www/helmcode_com
 hooks:
   ApplicationStop:
-    - location: /home/admin/scripts/stop_server.sh
+    - location: scripts/stop_blog.sh
       timeout: 300
   AfterInstall:
-    - location: /home/admin/scripts/restart_blog.sh
+    - location: scripts/restart_blog.sh
       timeout: 600
