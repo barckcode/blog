@@ -16,6 +16,7 @@ deploy:
   skip_cleanup: true
   on: &2
     repo: helmcode/apps
+    branch: "main"
   bucket: source.helmcode.com
   region: eu-west-1
 - provider: codedeploy
