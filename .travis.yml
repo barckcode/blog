@@ -6,6 +6,7 @@ git:
 branches:
   only:
     - "main"
+    - "pre"
 
 deploy:
 - provider: s3
@@ -14,18 +15,18 @@ deploy:
   local_dir: blog
   skip_cleanup: true
   on: &2
-    repo: organization/reponameHERE
-  bucket: yourBucketNameHERE
-  region: bucketRegionHERE
+    repo: helmcode/apps
+  bucket: source.helmcode.com
+  region: eu-west-1
 - provider: codedeploy
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
-  bucket: yourBucketNameHERE
+  bucket: source.helmcode.com
   key: latest.zip
   bundle_type: zip
-  application: NameOfTheCodeDeployApplicationNameHERE
-  deployment_group: CodeDeployDeploymentGroupNameHERE
-  region: serverRegionHERE
+  application: blogTest
+  deployment_group: blogTest
+  region: eu-west-1
   on: *2
 script:
   - zip -r latest *
