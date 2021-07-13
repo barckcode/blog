@@ -9,7 +9,7 @@ hooks:
       timeout: 300
   BeforeInstall:
     - location: infrastructure/ansible/conf/scripts/before_install.sh
-      timeout:
+      timeout: 300
   AfterInstall:
     - location: infrastructure/ansible/conf/scripts/after_install.sh
       timeout: 600
