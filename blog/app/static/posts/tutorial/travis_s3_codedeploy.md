@@ -5,7 +5,7 @@ Date: 15/07/2021
 Categories: docker
 File: travis_s3_codedeploy
 Description: En este post encontrarás cómo implementar Continuous Deployment a instancias EC2 utilizando TravisCI + S3 + AWS CodeDeploy
-Published: No
+Published: Yes
 ---
 
 # Deploy con TravisCI + AWS S3 + AWS CodeDeploy
