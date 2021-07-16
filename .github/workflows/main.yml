@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v1
+      uses: actions/checkout@main
 
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
@@ -20,7 +20,7 @@ jobs:
         aws-region: eu-west-1
 
     - name: Compress Source Code
-      run: mkdir deploy && tar -czvf deploy/source_blog.tar.gz ./blog
+      run: mkdir deploy && cd deploy && tar -cvf source_blog.tar ../blog
 
     - name: Upload Source Code to S3 bucket
-      run: aws s3 sync deploy/source_blog.tar.gz s3://source.helmcode.com/blog --delete
+      run: aws s3 sync source_blog.tar.gz s3://source.helmcode.com/blog --delete
