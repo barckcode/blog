@@ -19,5 +19,8 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: eu-west-1
 
-    - name: Upload code to S3 bucket
-      run: aws s3 sync ./blog s3://source.helmcode.com/blog --delete --exclude "*pycache*"
+    - name: Compress Source Code
+      run: tar -czvf source_blog.tar.gz ./blog
+
+    - name: Upload Source Code to S3 bucket
+      run: aws s3 sync source_blog.tar.gz s3://source.helmcode.com/blog --delete
