@@ -1,6 +1,6 @@
 project = "blog"
 
-app "" {
+app "blog_prod" {
   build {
     use "aws-ami" {
 			region = "eu-west-1"
