@@ -20,4 +20,4 @@ jobs:
         aws-region: eu-west-1
 
     - name: Upload code to S3 bucket
-      run: aws s3 sync ./blog s3://source.helmcode.com --delete --exclude "*pycache*"
+      run: aws s3 sync ./blog s3://source.helmcode.com/blog --delete --exclude "*pycache*"
