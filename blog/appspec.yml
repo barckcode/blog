@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /blog
+  - source: /
     destination: /var/www/helmcode_com
 hooks:
   ApplicationStop:
