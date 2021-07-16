@@ -19,15 +19,6 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: eu-west-1
 
-    - name: Create scripts directory
-      run: mkdir blog/scripts
-
-    - name: Create CodeDeploy scripts
-      run: cat <<EOF >>blog/scripts/stop_blog.sh
-              /usr/bin/docker service ps
-              exit 0
-              EOF
-
     - name: Compress Source Code
       run: mkdir source && tar -czvf source/blog_prod.tar.gz blog
 
