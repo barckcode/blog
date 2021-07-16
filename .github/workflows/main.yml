@@ -20,7 +20,7 @@ jobs:
         aws-region: eu-west-1
 
     - name: Compress Source Code
-      run: tar -czvf source_blog.tar.gz ./blog
+      run: mkdir deploy && tar -czvf deploy/source_blog.tar.gz ./blog
 
     - name: Upload Source Code to S3 bucket
-      run: aws s3 sync source_blog.tar.gz s3://source.helmcode.com/blog --delete
+      run: aws s3 sync deploy/source_blog.tar.gz s3://source.helmcode.com/blog --delete
