@@ -16,5 +16,5 @@ PRO_APP="flask_blog"
 echo "*********************************************" >> $LOG_SCRIPT
 echo $DATE >> $LOG_SCRIPT
 /usr/bin/docker service update $PRO_APP --force >> $LOG_SCRIPT
-echo "Deploy hecho con Travis + S3 + CodeDeploy" >> $LOG_SCRIPT
+echo "Deploy hecho con GitHubActions + S3 + CodePipeline + CodeDeploy" >> $LOG_SCRIPT
 exit 0
