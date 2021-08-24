@@ -2,7 +2,7 @@ import requests, os
 
 def send_message(name, email, message):
     bot_token = os.getenv("BOT_TOKEN")
-    URL= "https://api.telegram.org/bot" + bot_token + "/sendMessage"
+    URL = "https://api.telegram.org/bot" + bot_token + "/sendMessage"
     headers = {
         'Content-Type': 'application/json',
     }
@@ -11,7 +11,7 @@ def send_message(name, email, message):
     data = '{"chat_id": "' + chat_id + '", "text": "' + text + '", "disable_notification": false"'+ '"}'
 
     try:
-        requests.post( URL, headers = headers, data = data )
+        requests.post(URL, headers=headers, data=data)
         return 'Mensaje enviado a Telegram'
 
     except Exception as e:
