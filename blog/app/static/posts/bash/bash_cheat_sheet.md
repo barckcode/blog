@@ -78,7 +78,7 @@ arregloCadenas=(Estefania, Antonio, Pedro, Susana)
 ```
 
  **Arrays de rangos:**
- 
+
 - En este ejemplo el primer rango del array ({A..Z}) abarca los valores de todo el abecedario desde la A a la Z.
 - El segundo rango del array ({10..20}) abarca todos los números desde el 10 al 20. Ambos incluidos.
 
@@ -116,6 +116,7 @@ if [[ $VALIDACION -eq 0 ]]
 then
 	echo "a.- Tu nombre es: $NOMBRE"
 elif [[ $VALIDACION -gt 0 ]]
+then
 	echo "b.- Tu nombre NO es: $NOMBRE"
 else
 	echo "c.- Su $VALIDACION no coincide con ninguna de las condiciones anteriores."
@@ -153,11 +154,11 @@ Algunos operadores que podemos usar en nuestras condiciones.
 case $variable in
 	"1")
                 # Podemos usar números para nombrar nuestras opciones.
-		echo "Esta es la opción 1"        
+		echo "Esta es la opción 1"
 		;;
-	"B") 
+	"B")
                 # Podemos usar letras para nombrar nuestras opciones.
-		echo "Esta es la opción B" 
+		echo "Esta es la opción B"
 		;;
 	[C-E])
                  # Podemos utilizar rangos para abarcar distintas opciones.
