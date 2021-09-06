@@ -1,4 +1,5 @@
 {% extends "layouts/base.html.j2" %}
+{% from 'components/social_media.html.j2' import social_media %}
 {% block title %}About{% endblock %}
 {% block head %}
     {{ super() }}
@@ -17,6 +18,7 @@
     <meta property="og:description" content="¿Quién es Helmcode?" />
     <meta property="og:site_name" content="Helmcode" />
     <link rel="stylesheet" href="/static/css/templates/about.css" />
+    <link rel="stylesheet" href="/static/css/components/social_media.css" />
 {% endblock %}
 {% block main %}
 <div class="container">
@@ -110,23 +112,7 @@
     <p class="footer_profile_text">
         Antes que se me olvide. Os dejo los links a mis redes sociales. <strong>Seguirme!</strong> 😜
     </p>
-    <div class="container_social">
-        <a href="https://twitter.com/helmcode" target="_blank" rel="noopener noreferrer">
-            <figure class="container_social_img">
-                <img src="https://s3-eu-west-1.amazonaws.com/static.helmcode.com/images/about/twitter.svg" alt="Twitter image" class="social_img">
-            </figure>
-        </a>
-        <a href="https://github.com/helmcode" target="_blank" rel="noopener noreferrer">
-            <figure class="container_social_img">
-                <img src="https://s3-eu-west-1.amazonaws.com/static.helmcode.com/images/about/github.svg" alt="GitHub image" class="social_img">
-            </figure>
-        </a>
-        <a href="https://www.linkedin.com/in/helmcode" target="_blank" rel="noopener noreferrer">
-            <figure class="container_social_img">
-                <img src="https://s3-eu-west-1.amazonaws.com/static.helmcode.com/images/about/linkedin.svg" alt="LinkedIn image" class="social_img">
-            </figure>
-        </a>
-    </div>
+    {{ social_media() }}
 </div>
 
 {% endblock %}
