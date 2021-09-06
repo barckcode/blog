@@ -1,6 +1,7 @@
 {% extends "layouts/base.html.j2" %}
 {% from 'components/get_posts.html.j2' import get_posts %}
 {% from 'components/get_categories.html.j2' import get_categories %}
+{% from 'components/social_media.html.j2' import social_media %}
 {% block title %}Home{% endblock %}
 {% block head %}
     {{ super() }}
@@ -21,6 +22,7 @@
     <link rel="stylesheet" href="/static/css/templates/home.css" />
     <link rel="stylesheet" href="/static/css/components/get_posts.css" />
     <link rel="stylesheet" href="/static/css/components/get_categories.css" />
+    <link rel="stylesheet" href="/static/css/components/social_media.css" />
 {% endblock %}
 {% block main %}
 <div class="portada">
@@ -76,6 +78,11 @@
         </form>
         {# ------------------ #}
     </div>
+
+    {# Social Media Component #}
+    <section>
+        {{ social_media() }}
+    </section>
 
     {# ########## TEST ############ #}
     {# <div>
