@@ -88,6 +88,11 @@ def contact():
         return render_template('contact.html.j2', form=form)
 
 
+@app.route('/road-to-sre')
+def road_to_sre():
+    return render_template(
+        'roadtosre.html.j2',
+    )
 #TEST
 # print('*' * 20)
 # print(all_records_data)
