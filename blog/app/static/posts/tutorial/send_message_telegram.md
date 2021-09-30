@@ -95,6 +95,6 @@ Además aquí en la variable **data**, hemos añadido un parámetro adicional pa
 
 Como ves es bastante sencillo pero a la vez es realmente potente y útil.
 
-Espero que este post te haya sido de utilidad, si tienes cualquier consulta o darme feedback puedes enviarme un mensaje de [contacto](https://helmcode.com/contact) o sino siempre puedes mandarme un [Tweet](https://twitter.com/helmcode).
+Espero que este post te haya sido de utilidad, si tienes cualquier consulta o quieres darme feedback puedes enviarme un mensaje de [contacto](https://helmcode.com/contact) o sino siempre puedes mandarme un [Tweet](https://twitter.com/helmcode).
 
 Hasta la próxima!
