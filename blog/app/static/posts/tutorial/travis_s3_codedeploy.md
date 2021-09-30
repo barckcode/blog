@@ -337,6 +337,6 @@ Esto nos conducirá a la configuración del proyecto. Iremos hasta el apartado "
 
 Una vez hecho esto, cada vez que subas cambios a tu repositorio a la rama que hayas configurado en **.travis.yml** se iniciará un despliegue automático hacia las instancias EC2 que hayas indicado.
 
-Espero que este post te haya sido de utilidad, si tienes cualquier consulta o darme feedback puedes enviarme un mensaje de [contacto](https://helmcode.com/contact) o sino siempre puedes mandarme un [Tweet](https://twitter.com/helmcode).
+Espero que este post te haya sido de utilidad, si tienes cualquier consulta o quieres darme feedback puedes enviarme un mensaje de [contacto](https://helmcode.com/contact) o sino siempre puedes mandarme un [Tweet](https://twitter.com/helmcode).
 
 Hasta la próxima!

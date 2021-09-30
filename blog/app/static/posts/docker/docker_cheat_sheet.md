@@ -19,6 +19,38 @@ En este doc vas a encontrar un listado de comandos y ejemplos prácticos de Dock
 ---
 ###  🎖 Comandos
 
+#### - Construyendo imágenes
+🔹 Construir una imagen utilizando un Dockerfile que se encuentra en el directorio donde estemos.
+
+```bash
+docker build .
+```
+---
+
+🔹 Construir una imagen utilizando un fichero Dockerfile específico.
+
+```bash
+docker build -f <file>
+```
+Ejemplo:
+
+```bash
+docker build -f ./Dockerfile.local
+```
+---
+
+🔹 Construir una imagen utilizando un fichero Dockerfile específico e indicandole una etiqueta para identificar nuestra imagen.
+
+```bash
+docker build -f <file> -t <repository/image_name:tag>
+```
+Ejemplo:
+
+```bash
+docker build -f ./Dockerfile.local -t barckcode/flask_blog:1.0
+```
+---
+
 #### - Levantando contenedores
 🔹 Arrancar un contenedor.
 
@@ -218,3 +250,148 @@ docker rm -f <id_container>
 ```bash
 docker rm $(docker ps -aq)
 ```
+___
+
+#### - Administrando contenedores
+🔹 Parar un contenedor.
+
+- Se puede hacer tanto por nombre como por ID.
+
+```bash
+docker stop <name_container>
+```
+
+🔹 Reiniciar un contenedor.
+
+- Se puede hacer tanto por nombre como por ID.
+
+```bash
+docker restart <name_container>
+```
+
+🔹 Copiar un fichero local a un path dentro del contenedor.
+
+```bash
+docker cp <local_file> <container:path>
+```
+
+🔹 Copiar un fichero del contenedor a un path local.
+
+```bash
+docker cp <container:file> <local_path>
+```
+___
+
+#### - Docker Swarm
+
+🔹 Iniciar el clúster de docker swarm en una IP específica.
+
+```bash
+docker swarm init --advertise-addr <IP_server>
+```
+
+🔹 Añadir workers al clúster de docker swarm.
+
+```bash
+docker swarm join --token <token>
+```
+
+🔹 Ver las instrucciones y obtener el token para añadir un worker.
+
+```bash
+docker swarm join-token manager
+```
+
+🔹 Ver los nodos del clúster.
+
+```bash
+docker node ls
+```
+---
+
+🔹 Crear un servicio en docker swarm indicandole:
+
+- Nombre del servicio.
+- Número de réplicas.
+- Puntos de montaje.
+- Interfaz de red.
+- Exposición y mapeo de puertos.
+- Variable de entorno.
+- Imagen a utilizar por los contenedores y el comando a ejecutar.
+
+```bash
+docker service create \
+--name <name_svc> \
+--replicas <num_replicas> \
+--mount <type=[volume|bind|tmpfs|npipe]>,<source=name_volume>,<destination=/container_path> \
+--network <interface_name> \
+--publish <published=exposed_port_container>,<target=app_port> \
+--env <key=value> \
+<img_container> <command>
+```
+
+Ejemplo:
+
+```bash
+docker service create \
+--name prod_app \
+--replicas 4 \
+--mount type=bind,source=/var/www,destination=/app \
+--network net_app \
+--publish published=8000,target=8000 \
+--env FLASK_ENV=production \
+python:3.9 flask run --host=0.0.0.0
+```
+---
+
+🔹 Listar los servicios del cluster.
+
+```bash
+docker service ls
+```
+---
+
+🔹 Ver los servicios que estan corriendo en el cluster.
+
+```bash
+docker service ps <svc>
+```
+---
+
+🔹 Escalar un servicio.
+
+```bash
+docker service scale <id_svc=num_replicas>
+```
+
+Ejemplo:
+
+```bash
+docker service scale prod_app=2
+```
+---
+
+🔹 Ver detalles de un servicio.
+
+```bash
+docker service inspect --pretty <svc>
+```
+---
+
+🔹 Actualizar la imagen de un servicio.
+
+```bash
+docker service update --image <img_container> <svc>
+```
+---
+
+🔹 Reiniciar un servicio / Forzar actualización.
+
+```bash
+docker service update <svc> --force
+```
+---
+
+Espero que este post te haya sido de utilidad, si tienes cualquier consulta o quieres darme feedback puedes enviarme un mensaje de [contacto](https://helmcode.com/contact) o sino siempre puedes mandarme un [Tweet](https://twitter.com/helmcode).
+
+Hasta la próxima!
