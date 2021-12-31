@@ -1,3 +1,4 @@
+import requests
 from flask import render_template, request, flash
 
 # Internal modules
@@ -37,10 +38,12 @@ def blog_page():
 
 @app.route('/blog/<path:post>')
 def blog_post(post):
-    path_of_post = "app/static/posts/" + post + ".md"
+    url_of_post = "https://s3.eu-west-1.amazonaws.com/static.helmcode.com/posts/" + post + ".md"
+    get_post = requests.get(url_of_post)
+    get_post.encoding = 'utf-8'
 
-    post_data = post_markdown_data(path_of_post)
-    post_metadata = post_markdown_metadata(path_of_post)
+    post_data = post_markdown_data(get_post)
+    post_metadata = post_markdown_metadata(get_post)
 
     return render_template(
         'layouts/post.html.j2',
