@@ -29,7 +29,7 @@ Este ejemplo puede servir de la misma forma para Linux y MacOS. Desde Windows ta
 
 **¿Qué problema intentamos resolver con esto?**
 
-Como decíamos antes lo que intentamos es utilizando un usaurio, en nuestro caso `test`, conectarnos por SSH desde **sauron** a **bbdd01** y viceversa sin necesidad de introducir una contraseña. Para ello vamos a crear una relación de confianza entre estos dos servidores.
+Como decíamos antes lo que intentamos es utilizando un usuario, en nuestro caso `test`, conectarnos por SSH desde **sauron** a **bbdd01** y viceversa sin necesidad de introducir una contraseña. Para ello vamos a crear una relación de confianza entre estos dos servidores.
 
 ![ssh_diagram_01](https://s3.eu-west-1.amazonaws.com/static.helmcode.com/images/posts/tutorial/ssh_whitout_password/ssh_diagram_01.png)
 
@@ -64,7 +64,7 @@ ssh-keygen -t rsa
 
 ### Generando la relación de confianza.
 
-Una vez tengamos nuestra llaves RSA creadas en ambos servidores. Vamos a proceder a crear primero la relación de confianza que nos permitirá conectarnos del servidor **sauron** al servidor **bbdd01** con usuario `test` sin contraseña.
+Una vez tengamos nuestra llaves RSA creadas en ambos servidores. Vamos a proceder a crear primero la relación de confianza que nos permitirá conectarnos del servidor **sauron** al servidor **bbdd01** con el usuario `test` sin contraseña.
 
 Para ello, en el servidor **bbdd01** creamos el fichero `/home/test/.ssh/authorized_keys` el cuál contendrá las llaves públicas de los servidores que puedan conectarse a él.
 
@@ -78,15 +78,15 @@ Dentro de este fichero que hemos creado en **bbdd01** copiamos nuestra llave pú
 
 ![ssh_trust_relationship](https://s3.eu-west-1.amazonaws.com/static.helmcode.com/images/posts/tutorial/ssh_whitout_password/ssh_trust_relationship.png)
 
-Asegurate que tu llave PUBLICA de un servidor coincide con lo que has pegado dentro del `authorized_keys` del otro servidor.
+Asegurate que tu llave PÚBLICA de un servidor coincide con lo que has pegado dentro del `authorized_keys` del otro servidor.
 
-Finalmente, podemos probar si nuestra relación de confianza a funcionado. Por lo que vamos a probar a conectarnos con el usuario `test` desde nuestro servidor **sauron** a nuestro servidor **bbdd01**:
+Finalmente, podemos probar si nuestra relación de confianza ha funcionado. Por lo que vamos a probar a conectarnos con el usuario `test` desde nuestro servidor **sauron** a nuestro servidor **bbdd01**:
 
 ![ssh_test_01](https://s3.eu-west-1.amazonaws.com/static.helmcode.com/images/posts/tutorial/ssh_whitout_password/ssh_test_01.png)
 
 Exito! nos hemos podido conectar correctamente desde **sauron** a **bbdd01**
 
-Ahora bien, fijate en parte derecha de la captura. Nos hemos intentado conectar desde **bbdd01** a **sauron** y me ha dicho que me peine 😡 ¿Qué ha pasado?
+Ahora bien, fijate en la parte derecha de la captura. Nos hemos intentado conectar desde **bbdd01** a **sauron** y me ha dicho que me peine 😡 ¿Qué ha pasado?
 
 Bueno, si recuerdas de momento pillamos la llave PÚBLICA del usuario `test` que existe en el servidor **sauron** y la copiamos en el servidor **bbdd01**, esto significa que el servidor **bbdd01** puede autorizar el acceso sin contraseña al usuario `test` desde **sauron** porque conoce su llave PÚBLICA pero el servidor **sauron** no conoce ninguna llave PÚBLICA que venga del servidor **bbdd01**
 
@@ -117,6 +117,6 @@ Después copiaremos su llave PÚBLICA en el fichero `authorized_keys` del servid
 
 ![ssh_arya](https://s3.eu-west-1.amazonaws.com/static.helmcode.com/images/posts/tutorial/ssh_whitout_password/ssh_arya.png)
 
-Espero que este post te haya sido de utilidad, si tienes cualquier consulta o quieres darme feedback puedes enviarme un mensaje a través de la página de contacto [contacto](https://helmcode.com/contact) o sino siempre puedes mandarme un [Tweet](https://twitter.com/helmcode).
+Espero que este post te haya sido de utilidad, si tienes cualquier consulta o quieres darme feedback puedes enviarme un mensaje a través de la página de [contacto](https://helmcode.com/contact) o sino siempre puedes mandarme un [Tweet](https://twitter.com/helmcode).
 
 Hasta la próxima!
